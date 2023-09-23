@@ -20,7 +20,6 @@ public class TopBarMenu extends JMenuBar{
 
         // File menu items 
 
-
         // Edit menu items 
 
         // Help menu items

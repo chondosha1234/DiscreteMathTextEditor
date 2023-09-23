@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.event.*;
 
-
 /* 
  * Class handles the key mapping implementation.  It maps the numpad keys to various discrete math symbols.  
  * Because it implements KeyListener, once an object is instantiated, the TextArea in the main DiscreteMathEditor class 
