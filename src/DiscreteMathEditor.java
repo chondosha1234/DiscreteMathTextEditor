@@ -17,6 +17,9 @@ public class DiscreteMathEditor extends JFrame {
         setSize(1000, 650);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        int verticalPadding = 10;
+        int horizontalPadding = 10;
+
         mainWindow = new JPanel(new BorderLayout());
         getContentPane().add(mainWindow);
 
@@ -26,13 +29,20 @@ public class DiscreteMathEditor extends JFrame {
 
         // sidebar will hold information about the application for users
         JPanel sideBar = new JPanel(new BorderLayout());
+        sideBar.setPreferredSize(new Dimension(200, 650));
+        sideBar.setBorder(BorderFactory.createEmptyBorder(verticalPadding, horizontalPadding, verticalPadding, horizontalPadding));
         mainWindow.add(sideBar, BorderLayout.EAST);
 
-        JLabel numPadInfo = new JLabel("These are the mappings of your numpad. Hold ctrl to use the secondary mappings. Make sure your numlock is on.");
+        JLabel numPadInfo = new JLabel("<html>These are the mappings of your numpad. Hold ctrl to use the secondary mappings. Make sure your numlock is on.</html>");
+        numPadInfo.setHorizontalAlignment(SwingConstants.CENTER);
+        numPadInfo.setVerticalAlignment(SwingConstants.TOP);
+        numPadInfo.setOpaque(true);
+        numPadInfo.setBorder(BorderFactory.createEmptyBorder(verticalPadding, horizontalPadding, verticalPadding, horizontalPadding));
         sideBar.add(numPadInfo, BorderLayout.NORTH);
 
         // a display to remind user the key mappings of the numpad
         JPanel numPad = new NumPad();
+        numPad.setBorder(BorderFactory.createEmptyBorder(verticalPadding, horizontalPadding, verticalPadding, horizontalPadding));
         sideBar.add(numPad, BorderLayout.CENTER);
 
         // main text writing area

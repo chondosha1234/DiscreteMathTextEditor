@@ -8,6 +8,7 @@ public class CellPanel extends JPanel {
 
     public CellPanel(LayoutManager manager) {
         super(manager);
+        this.setPreferredSize(new Dimension(50,50));
     }
     
     @Override
