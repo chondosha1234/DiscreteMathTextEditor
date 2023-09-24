@@ -20,11 +20,25 @@ public class DiscreteMathEditor extends JFrame {
         mainWindow = new JPanel(new BorderLayout());
         getContentPane().add(mainWindow);
 
+        // typical top bar menus like file, edit, settings
         TopBarMenu topBarMenu = new TopBarMenu();
         mainWindow.add(topBarMenu, BorderLayout.NORTH);
 
+        // sidebar will hold information about the application for users
+        JPanel sideBar = new JPanel(new BorderLayout());
+        mainWindow.add(sideBar, BorderLayout.EAST);
+
+        JLabel numPadInfo = new JLabel("These are the mappings of your numpad. Hold ctrl to use the secondary mappings. Make sure your numlock is on.");
+        sideBar.add(numPadInfo, BorderLayout.NORTH);
+
+        // a display to remind user the key mappings of the numpad
+        JPanel numPad = new NumPad();
+        sideBar.add(numPad, BorderLayout.CENTER);
+
+        // main text writing area
         textArea = new JTextArea();
 
+        // Dialog is a font that supports the correct unicode characters
         Font font = new Font("Dialog", Font.PLAIN, 24);
         textArea.setFont(font);
 
@@ -33,6 +47,7 @@ public class DiscreteMathEditor extends JFrame {
 
         mainWindow.add(new JScrollPane(textArea), BorderLayout.CENTER);
         
+        // create keymapper object and set it as the keyListener for the text area
         KeyMapper keyMapper = new KeyMapper(textArea);
         textArea.addKeyListener(keyMapper);
     }
