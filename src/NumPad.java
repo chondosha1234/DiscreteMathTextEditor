@@ -10,8 +10,6 @@ import javax.swing.border.LineBorder;
  * key mapping representation of your numpad so the user can reference it while typing.
  */
 public class NumPad extends JPanel {
-    
-    private JPanel numPadGrid;
 
     public NumPad() {
 
