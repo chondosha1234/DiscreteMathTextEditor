@@ -32,41 +32,66 @@ public class KeyMapper implements KeyListener {
 
                 } else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD8) {
 
-                    textArea.insert("\u2192", caretPosition);
+                    textArea.insert("\u00AC", caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD8) {
 
-                    textArea.insert("\u2194", caretPosition);
+                    textArea.insert("\u2234", caretPosition);
 
                 } else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD9) {
 
-                    textArea.insert("\u2261", caretPosition);
+                    textArea.insert("\u2192", caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD9) {
 
-                    textArea.insert("\u00AC", caretPosition);
+                    textArea.insert("\u2194", caretPosition);
                     
-                } else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD4) {
+                }else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD4) {
 
-                    textArea.insert("\u2200", caretPosition);
+                    textArea.insert("\u2261", caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD4) {
 
-                    textArea.insert("\u2203", caretPosition);
+                    textArea.insert("\u2262", caretPosition);
                     
-                } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_NUMPAD5) {
+                } else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD5) {
 
-                    textArea.insert("\u2228", caretPosition);
+                    textArea.insert("\u2203", caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD5) {
 
-                    textArea.insert("\u2228", caretPosition);
+                    textArea.insert("\u2200", caretPosition);
+                    
+                } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_NUMPAD6) {
+
+                    textArea.insert("\u2282", caretPosition);
+
+                } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD6) {
+
+                    textArea.insert("\u2286", caretPosition);
+                    
+                } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_NUMPAD1) {
+
+                    textArea.insert("\u2208", caretPosition);
+
+                } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD1) {
+
+                    textArea.insert("\u2209", caretPosition);
+                    
+                } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_NUMPAD2) {
+
+                    textArea.insert("\u222A", caretPosition);
+
+                } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD2) {
+
+                    textArea.insert("\u2229", caretPosition);
                     
                 }
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
+        int caretPosition = textArea.getCaretPosition();
 
         // This code is necessary to remove the number generated when the numpad key is pressed 
         // Common solutions like using e.consume() do not work on the numpad keys specifically 
@@ -84,7 +109,18 @@ public class KeyMapper implements KeyListener {
                 )) {
 
                     String text = textArea.getText();
-                    String newText = text.substring(0, text.length()-1);
+                    String newText;
+
+                    if (caretPosition == text.length()) {
+                        // caret or cursor is at end of the line
+                        newText = text.substring(0, text.length()-1);
+                    } else {
+                        // caret or cursor is in middle of the text, need to remove the numpad number at that point 
+                        // instead of just removing the end
+                        String firstHalf = text.substring(0, caretPosition-1);
+                        String secondHalf = text.substring(caretPosition, text.length());
+                        newText = firstHalf + secondHalf;
+                    }
                     textArea.setText(newText);
                 }
     }
