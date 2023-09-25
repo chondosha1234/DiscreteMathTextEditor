@@ -23,8 +23,11 @@ public class DiscreteMathEditor extends JFrame {
         mainWindow = new JPanel(new BorderLayout());
         getContentPane().add(mainWindow);
 
+        // main text writing area
+        textArea = new JTextArea();
+
         // typical top bar menus like file, edit, settings
-        TopBarMenu topBarMenu = new TopBarMenu();
+        TopBarMenu topBarMenu = new TopBarMenu(textArea);
         mainWindow.add(topBarMenu, BorderLayout.NORTH);
 
         // sidebar will hold information about the application for users
@@ -44,9 +47,6 @@ public class DiscreteMathEditor extends JFrame {
         JPanel numPad = new NumPad();
         numPad.setBorder(BorderFactory.createEmptyBorder(verticalPadding, horizontalPadding, verticalPadding, horizontalPadding));
         sideBar.add(numPad, BorderLayout.CENTER);
-
-        // main text writing area
-        textArea = new JTextArea();
 
         // Dialog is a font that supports the correct unicode characters
         Font font = new Font("Dialog", Font.PLAIN, 24);

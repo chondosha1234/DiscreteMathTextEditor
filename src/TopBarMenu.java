@@ -1,12 +1,25 @@
+import java.awt.Desktop;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
 import javax.swing.*;
+import menus.OpenMenu;
 
 /*
  *  Class to build a top bar menu for the top of the Text Editor window.  Will have basic drop down menus, like File, Edit, Settings, Help
  *  
  */
 public class TopBarMenu extends JMenuBar{
+
+    private JTextArea textArea;
     
-    public TopBarMenu() {
+    public TopBarMenu(JTextArea textArea) {
+
+        this.textArea = textArea;
         
         JMenu fileMenu = new JMenu("File");
         JMenu editMenu = new JMenu("Edit");
@@ -22,6 +35,8 @@ public class TopBarMenu extends JMenuBar{
         JMenuItem openMenuItem = new JMenuItem("Open");
         JMenuItem saveMenuItem = new JMenuItem("Save");
         JMenuItem exitMenuItem = new JMenuItem("Exit");
+
+        openMenuItem.addActionListener(new OpenMenu(textArea, fileMenu));
 
         fileMenu.add(newMenuItem);
         fileMenu.add(openMenuItem);
