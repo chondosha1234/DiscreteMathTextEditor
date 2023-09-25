@@ -21,6 +21,7 @@ public class NumPad extends JPanel {
         String[][] buttons = {
             {"\u2227", "\u2228"},
             {"\u00AC", "\u2234"},
+            {"\u2192", "\u2194"},
             {"\u2261", "\u2262"},
             {"\u2203", "\u2200"},
             {"\u2282", "\u2286"},
