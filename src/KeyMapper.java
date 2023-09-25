@@ -92,6 +92,7 @@ public class KeyMapper implements KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
+        int caretPosition = textArea.getCaretPosition();
 
         // This code is necessary to remove the number generated when the numpad key is pressed 
         // Common solutions like using e.consume() do not work on the numpad keys specifically 
@@ -109,7 +110,18 @@ public class KeyMapper implements KeyListener {
                 )) {
 
                     String text = textArea.getText();
-                    String newText = text.substring(0, text.length()-1);
+                    String newText;
+
+                    if (caretPosition == text.length()) {
+                        // caret or cursor is at end of the line
+                        newText = text.substring(0, text.length()-1);
+                    } else {
+                        // caret or cursor is in middle of the text, need to remove the numpad number at that point 
+                        // instead of just removing the end
+                        String firstHalf = text.substring(0, caretPosition-1);
+                        String secondHalf = text.substring(caretPosition, text.length());
+                        newText = firstHalf + secondHalf;
+                    }
                     textArea.setText(newText);
                 }
     }
