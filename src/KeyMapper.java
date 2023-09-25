@@ -33,11 +33,11 @@ public class KeyMapper implements KeyListener {
 
                 } else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD8) {
 
-                    textArea.insert("\u2192", caretPosition);
+                    textArea.insert("\u00AC", caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD8) {
 
-                    textArea.insert("\u2194", caretPosition);
+                    textArea.insert("\u2234", caretPosition);
 
                 } else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD9) {
 
@@ -45,23 +45,39 @@ public class KeyMapper implements KeyListener {
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD9) {
 
-                    textArea.insert("\u00AC", caretPosition);
+                    textArea.insert("\u2262", caretPosition);
                     
                 } else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD4) {
 
-                    textArea.insert("\u2200", caretPosition);
+                    textArea.insert("\u2203", caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD4) {
 
-                    textArea.insert("\u2203", caretPosition);
+                    textArea.insert("\u2200", caretPosition);
                     
                 } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_NUMPAD5) {
 
-                    textArea.insert("\u2228", caretPosition);
+                    textArea.insert("\u2282", caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD5) {
 
-                    textArea.insert("\u2228", caretPosition);
+                    textArea.insert("\u2286", caretPosition);
+                    
+                } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_NUMPAD6) {
+
+                    textArea.insert("\u2208", caretPosition);
+
+                } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD6) {
+
+                    textArea.insert("\u2209", caretPosition);
+                    
+                } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_NUMPAD1) {
+
+                    textArea.insert("\u222A", caretPosition);
+
+                } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD1) {
+
+                    textArea.insert("\u2229", caretPosition);
                     
                 }
     }
