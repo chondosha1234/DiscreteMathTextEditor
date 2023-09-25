@@ -122,6 +122,8 @@ public class KeyMapper implements KeyListener {
                         newText = firstHalf + secondHalf;
                     }
                     textArea.setText(newText);
+                    // setting textArea text puts caret at end, but if you type in middle of line, need to have caret placed there
+                    textArea.setCaretPosition(caretPosition-1);
                 }
     }
 
