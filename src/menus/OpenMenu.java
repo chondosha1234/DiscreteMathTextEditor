@@ -6,16 +6,16 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import javax.swing.JFileChooser;
-import javax.swing.JMenu;
+import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
 public class OpenMenu implements ActionListener {
 
     private JTextArea textArea;
-    private JMenu parent;
+    private JMenuBar parent;
     
-    public OpenMenu(JTextArea textArea, JMenu parent){
+    public OpenMenu(JTextArea textArea, JMenuBar parent){
         this.textArea = textArea;
         this.parent = parent;
     }
