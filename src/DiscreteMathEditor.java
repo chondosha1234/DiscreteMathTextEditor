@@ -35,7 +35,7 @@ public class DiscreteMathEditor extends JFrame {
 
         // sidebar will hold information about the application for users
         JPanel sideBar = new JPanel(new BorderLayout());
-        sideBar.setPreferredSize(new Dimension(200, 650));
+        sideBar.setPreferredSize(new Dimension(150, 50));
         sideBar.setBorder(BorderFactory.createEmptyBorder(verticalPadding, horizontalPadding, verticalPadding, horizontalPadding));
         mainWindow.add(sideBar, BorderLayout.EAST);
 

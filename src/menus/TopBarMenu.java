@@ -36,6 +36,7 @@ public class TopBarMenu extends JMenuBar{
         openMenuItem.addActionListener(new OpenMenu(textArea, this));
         saveMenuItem.addActionListener(new SaveMenu(true, textArea, this));
         saveAsMenuItem.addActionListener(new SaveMenu(false, textArea, this));
+        exitMenuItem.addActionListener(new ExitMenu());
 
         fileMenu.add(newMenuItem);
         fileMenu.add(openMenuItem);
