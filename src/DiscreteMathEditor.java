@@ -23,6 +23,7 @@ public class DiscreteMathEditor extends JFrame {
 
         setTitle("Discrete Math");
         setSize(1000, 650);
+        setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         this.isSideBarCollapsed = false;
@@ -39,6 +40,12 @@ public class DiscreteMathEditor extends JFrame {
         this.setBackground(backgroundColor);
         mainWindow.setBackground(backgroundColor);
         mainWindow.setForeground(textColor);
+
+        JPanel backDrop = new JPanel(new BorderLayout());
+        backDrop.setBackground(Color.BLACK);
+        Border backDropInset = BorderFactory.createEmptyBorder(25, 100, 25, 100);
+        backDrop.setBorder(backDropInset);
+        mainWindow.add(backDrop, BorderLayout.CENTER);
 
         // main text writing area
         textArea = new JTextArea();
@@ -111,7 +118,7 @@ public class DiscreteMathEditor extends JFrame {
 
         JScrollPane scrollPane = new JScrollPane(textArea);
         scrollPane.setBorder(null);
-        mainWindow.add(scrollPane, BorderLayout.CENTER);
+        backDrop.add(scrollPane, BorderLayout.CENTER);
         
         // create keymapper object and set it as the keyListener for the text area
         KeyMapper keyMapper = new KeyMapper(textArea);

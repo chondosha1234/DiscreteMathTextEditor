@@ -18,20 +18,21 @@ public class NumPad extends JPanel {
         setLayout(new GridLayout(4, 3, 10, 5));
 
         String[][] buttons = {
-            {"\u2227", "\u2228"},
-            {"\u00AC", "\u2234"},
-            {"\u2192", "\u2194"},
-            {"\u2261", "\u2262"},
-            {"\u2203", "\u2200"},
-            {"\u2282", "\u2286"},
-            {"\u2208", "\u2209"},
-            {"\u222A", "\u2229"},
+            {"\u2227", "\u2228"},  // logical AND and OR
+            {"\u00AC", "\u2234"},  // logical NOT and THEREFORE 
+            {"\u2192", "\u2194"},  // implication and biconditional arrows
+            {"\u2261", "\u2262"},  // equivalent and not equivalent
+            {"\u2203", "\u2200"},  // Existential and Universal symbols
+            {"\u2282", "\u2286"},  // subset and subset equals 
+            {"\u2208", "\u2209"},  // set member and not set member
+            {"\u222A", "\u2229"},  // set Union and Intersection
             {"", ""},
             {"", ""},
             {"", ""},
             {"", ""},
         };
 
+        // for each label pair create a button component and put the 2 symbols on it so it looks like numpad
         for (String[] labelPair : buttons) {
 
             JPanel buttonPanel = new JPanel(new BorderLayout());
@@ -43,7 +44,8 @@ public class NumPad extends JPanel {
             secondarySymbol.setFont(new Font("Dialog", Font.PLAIN, 14)); 
             secondarySymbol.setHorizontalAlignment(SwingConstants.LEFT); 
 
-            buttonPanel.setPreferredSize(new Dimension(50, 50));
+            buttonPanel.setMaximumSize(new Dimension(50, 10));
+            //buttonPanel.setPreferredSize(new Dimension(50, 50));
             buttonPanel.setBackground(Color.LIGHT_GRAY);
             buttonPanel.setBorder(new LineBorder(Color.BLACK));
 
