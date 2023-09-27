@@ -1,5 +1,6 @@
 package menus;
 
+import java.awt.Color;
 import java.io.File;
 import javax.swing.*;
 
@@ -16,10 +17,17 @@ public class TopBarMenu extends JMenuBar{
 
         this.textArea = textArea;
         this.file = null;
+
+        Color backgroundColor = new Color(30, 30, 30); // Dark background
+        Color textColor = new Color(220, 220, 220); // Light text
         
         JMenu fileMenu = new JMenu("File");
         JMenu editMenu = new JMenu("Edit");
         JMenu helpMenu = new JMenu("Help");
+
+        fileMenu.setForeground(textColor);
+        editMenu.setForeground(textColor);
+        helpMenu.setForeground(textColor);
 
         // Add menus to the object itself, because it is a JMenuBar
         this.add(fileMenu);
@@ -32,6 +40,18 @@ public class TopBarMenu extends JMenuBar{
         JMenuItem saveMenuItem = new JMenuItem("Save");
         JMenuItem saveAsMenuItem = new JMenuItem("Save As");
         JMenuItem exitMenuItem = new JMenuItem("Exit");
+
+        newMenuItem.setBackground(backgroundColor);
+        openMenuItem.setBackground(backgroundColor);
+        saveMenuItem.setBackground(backgroundColor);
+        saveAsMenuItem.setBackground(backgroundColor);
+        exitMenuItem.setBackground(backgroundColor);
+
+        newMenuItem.setForeground(textColor);
+        openMenuItem.setForeground(textColor);
+        saveMenuItem.setForeground(textColor);
+        saveAsMenuItem.setForeground(textColor);
+        exitMenuItem.setForeground(textColor);
 
         openMenuItem.addActionListener(new OpenMenu(textArea, this));
         saveMenuItem.addActionListener(new SaveMenu(true, textArea, this));
