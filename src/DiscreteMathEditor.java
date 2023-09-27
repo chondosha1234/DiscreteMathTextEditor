@@ -47,19 +47,8 @@ public class DiscreteMathEditor extends JFrame {
         backDrop.setBorder(backDropInset);
         mainWindow.add(backDrop, BorderLayout.CENTER);
 
-        // main text writing area
-        textArea = new JTextArea();
-        textArea.setCaretColor(textColor);
-        textArea.setBackground(backgroundColor);
-        textArea.setForeground(textColor);
-        Border textAreaBorder = BorderFactory.createLineBorder(borderColor, 1);
-        Border insetMargin = BorderFactory.createEmptyBorder(25,15,20,15);
-        Border compoundBorder = BorderFactory.createCompoundBorder(textAreaBorder, insetMargin);
-        textArea.setBorder(compoundBorder);
-
-        // Dialog is a font that supports the correct unicode characters
-        Font font = new Font("Dialog", Font.PLAIN, 24);
-        textArea.setFont(font);
+        // main text writing area using a custom TextArea class I made which extends JTextArea
+        textArea = new TextArea();
 
         // typical top bar menus like file, edit, settings
         TopBarMenu topBarMenu = new TopBarMenu(textArea);

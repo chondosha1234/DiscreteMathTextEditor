@@ -39,9 +39,9 @@ public class NumPad extends JPanel {
             JLabel mainSymbol = new JLabel(labelPair[0]);
             JLabel secondarySymbol = new JLabel(labelPair[1]);
 
-            mainSymbol.setFont(new Font("Dialog", Font.BOLD, 20)); 
+            mainSymbol.setFont(new Font("Dialog", Font.BOLD, 16)); 
             mainSymbol.setHorizontalAlignment(SwingConstants.CENTER); 
-            secondarySymbol.setFont(new Font("Dialog", Font.PLAIN, 14)); 
+            secondarySymbol.setFont(new Font("Dialog", Font.PLAIN, 12)); 
             secondarySymbol.setHorizontalAlignment(SwingConstants.LEFT); 
 
             buttonPanel.setMaximumSize(new Dimension(50, 10));
@@ -49,8 +49,8 @@ public class NumPad extends JPanel {
             buttonPanel.setBackground(Color.LIGHT_GRAY);
             buttonPanel.setBorder(new LineBorder(Color.BLACK));
 
-            mainSymbol.setBorder(BorderFactory.createEmptyBorder(10, 0, 0, 0));
-            secondarySymbol.setBorder(BorderFactory.createEmptyBorder(0, 5, 10, 0));
+            mainSymbol.setBorder(BorderFactory.createEmptyBorder(5, 0, 0, 0));
+            secondarySymbol.setBorder(BorderFactory.createEmptyBorder(0, 5, 5, 0));
             buttonPanel.add(mainSymbol, BorderLayout.CENTER);
             buttonPanel.add(secondarySymbol, BorderLayout.SOUTH);
 

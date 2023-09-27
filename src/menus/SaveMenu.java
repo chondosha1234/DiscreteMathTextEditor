@@ -41,6 +41,9 @@ public class SaveMenu implements ActionListener {
     }
     
 
+    /*
+     * Writes content to file that already exists
+     */
     private void saveFile(File file) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
             String content = textArea.getText();
@@ -52,6 +55,10 @@ public class SaveMenu implements ActionListener {
         }
     }
 
+    /*
+     * opens up the built in file chooser, can create new file or overwrite existing
+     * calls the saveFile method to do the actual writing of data
+     */
     private void saveAs() {
         JFileChooser fileChooser = new JFileChooser();
 
