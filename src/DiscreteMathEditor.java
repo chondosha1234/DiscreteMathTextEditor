@@ -3,6 +3,8 @@ import javax.swing.*;
 import menus.TopBarMenu;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 
 /* 
@@ -13,6 +15,7 @@ public class DiscreteMathEditor extends JFrame {
 
     private JPanel mainWindow;
     private JTextArea textArea;
+    private boolean isSideBarCollapsed;
 
     public DiscreteMathEditor() {
 
@@ -20,6 +23,7 @@ public class DiscreteMathEditor extends JFrame {
         setSize(1000, 650);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        this.isSideBarCollapsed = false;
         int verticalPadding = 10;
         int horizontalPadding = 10;
 
@@ -39,6 +43,11 @@ public class DiscreteMathEditor extends JFrame {
         sideBar.setBorder(BorderFactory.createEmptyBorder(verticalPadding, horizontalPadding, verticalPadding, horizontalPadding));
         mainWindow.add(sideBar, BorderLayout.EAST);
 
+        // add button to collapse sidebar
+        JButton toggleSideBarButton = new JButton(">");
+        toggleSideBarButton.setPreferredSize(new Dimension(25, 25));
+        sideBar.add(toggleSideBarButton, BorderLayout.SOUTH);
+
         JLabel numPadInfo = new JLabel("<html>These are the mappings of your numpad. Hold ctrl to use the secondary mappings. Make sure your numlock is on.</html>");
         numPadInfo.setHorizontalAlignment(SwingConstants.CENTER);
         numPadInfo.setVerticalAlignment(SwingConstants.TOP);
@@ -50,6 +59,23 @@ public class DiscreteMathEditor extends JFrame {
         JPanel numPad = new NumPad();
         numPad.setBorder(BorderFactory.createEmptyBorder(verticalPadding, horizontalPadding, verticalPadding, horizontalPadding));
         sideBar.add(numPad, BorderLayout.CENTER);
+
+        // add toggle implementation which affects numpad and numpadinfo label
+        toggleSideBarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                isSideBarCollapsed = !isSideBarCollapsed;
+                numPadInfo.setVisible(!isSideBarCollapsed);
+                numPad.setVisible(!isSideBarCollapsed);
+                if (isSideBarCollapsed) {
+                    toggleSideBarButton.setText("<");
+                    sideBar.setPreferredSize(new Dimension(75, 25));
+                } else {
+                    toggleSideBarButton.setText(">");
+                    sideBar.setPreferredSize(new Dimension(150, 50));
+                }
+            }
+        });
 
         // Dialog is a font that supports the correct unicode characters
         Font font = new Font("Dialog", Font.PLAIN, 24);
