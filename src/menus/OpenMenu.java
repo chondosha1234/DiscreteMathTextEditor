@@ -6,16 +6,15 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import javax.swing.JFileChooser;
-import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
 public class OpenMenu implements ActionListener {
 
     private JTextArea textArea;
-    private JMenuBar parent;
+    private TopBarMenu parent;
     
-    public OpenMenu(JTextArea textArea, JMenuBar parent){
+    public OpenMenu(JTextArea textArea, TopBarMenu parent){
         this.textArea = textArea;
         this.parent = parent;
     }
@@ -28,8 +27,8 @@ public class OpenMenu implements ActionListener {
         if (choice == JFileChooser.APPROVE_OPTION) {
             File selectedFile = fileChooser.getSelectedFile();
             readFile(selectedFile);
-            }
         }
+    }
 
     private void readFile(File file) {
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
@@ -39,6 +38,7 @@ public class OpenMenu implements ActionListener {
                 content.append(line).append("\n");
             }
             textArea.setText(content.toString());
+            parent.setFile(file);
         } catch (IOException e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, "Error opening file.", "Error", JOptionPane.ERROR_MESSAGE);

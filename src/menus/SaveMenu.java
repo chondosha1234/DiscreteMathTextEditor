@@ -67,7 +67,12 @@ public class SaveMenu implements ActionListener {
             File selectedFile = fileChooser.getSelectedFile();
             saveFile(selectedFile);
             parent.setFile(selectedFile); // Update the current file
+            setFile(selectedFile);
         }
+    }
+
+    private void setFile(File file) {
+        this.currentFile = file;
     }
     
 }

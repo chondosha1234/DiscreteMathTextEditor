@@ -5,17 +5,16 @@ import java.io.File;
 import javax.swing.*;
 
 /*
- *  Class to build a top bar menu for the top of the Text Editor window.  Will have basic drop down menus, like File, Edit, Settings, Help
+ *  Class to build a top bar menu for the top of the Text Editor window.  Will have basic drop down menus, like File, Edit, 
+ *  Settings, Help
  *  
  */
 public class TopBarMenu extends JMenuBar{
 
-    private JTextArea textArea;
     private File file;
     
     public TopBarMenu(JTextArea textArea) {
 
-        this.textArea = textArea;
         this.file = null;
 
         Color backgroundColor = new Color(30, 30, 30); // Dark background
