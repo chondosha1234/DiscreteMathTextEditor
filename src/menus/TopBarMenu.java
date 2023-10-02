@@ -9,7 +9,7 @@ import javax.swing.*;
  *  Settings, Help
  *  
  */
-public class TopBarMenu extends JMenuBar{
+public class TopBarMenu extends JMenuBar {
 
     private File file;
     private SaveMenu saveMenu;

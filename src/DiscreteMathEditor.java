@@ -1,6 +1,5 @@
 import javax.swing.*;
 import javax.swing.border.Border;
-import javax.swing.border.LineBorder;
 
 import menus.TopBarMenu;
 
@@ -112,5 +111,9 @@ public class DiscreteMathEditor extends JFrame {
         // create keymapper object and set it as the keyListener for the text area
         KeyMapper keyMapper = new KeyMapper(textArea);
         textArea.addKeyListener(keyMapper);
+    }
+
+    public static void addNewPage() {
+        
     }
 }
