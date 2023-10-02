@@ -1,9 +1,16 @@
-import java.util.ArrayList;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
 
+import javax.swing.BorderFactory;
 import javax.swing.DefaultListModel;
+import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
 
 public class SymbolSelection extends JDialog {
@@ -26,10 +33,47 @@ public class SymbolSelection extends JDialog {
             symbolList.addElement(s);
         }
 
+        JLabel primaryLabel = new JLabel("Select primary symbol");
+        JLabel secondaryLabel = new JLabel("Select secondary symbol");
+        primaryLabel.setBorder(BorderFactory.createEmptyBorder(0,10,0,10));
+        secondaryLabel.setBorder(BorderFactory.createEmptyBorder(0, 10, 0, 10));
+
         JList<String> primarySymbolList = new JList<>(symbolList);
         JList<String> secondarySymbolList = new JList<>(symbolList);
         primarySymbolList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         secondarySymbolList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+
+        JScrollPane primaryScrollPane = new JScrollPane(primarySymbolList);
+        JScrollPane secondaryScrollPane = new JScrollPane(secondarySymbolList);
+        primaryScrollPane.setPreferredSize(new Dimension(100, 200));
+        secondaryScrollPane.setPreferredSize(new Dimension(100, 200));
+
+        JButton confirm = new JButton("Confirm");
+        JButton cancel = new JButton("Cancel");
+        confirm.setPreferredSize(new Dimension(100, 30));
+        cancel.setPreferredSize(new Dimension(100, 30));
+
+        this.setLayout(new GridLayout(3, 1));
+        JPanel labels = new JPanel(new FlowLayout());
+        JPanel lists = new JPanel(new FlowLayout());
+        JPanel buttons = new JPanel(new FlowLayout());
+
+        this.add(labels);
+        this.add(lists);
+        this.add(buttons);
+
+        labels.add(primaryLabel);
+        labels.add(secondaryLabel);
+
+        lists.add(primaryScrollPane);
+        lists.add(secondaryScrollPane);
+        
+        buttons.add(confirm);
+        buttons.add(cancel);
+
+        this.setSize(400, 100);
+        this.pack();
+        this.setLocationRelativeTo(null);
     }
 
 

@@ -3,6 +3,9 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 
@@ -13,7 +16,7 @@ import javax.swing.border.LineBorder;
  */
 public class NumPad extends JPanel {
 
-    public NumPad() {
+    public NumPad(JFrame parent) {
 
         setLayout(new GridLayout(4, 3, 10, 5));
 
@@ -53,6 +56,18 @@ public class NumPad extends JPanel {
             secondarySymbol.setBorder(BorderFactory.createEmptyBorder(0, 5, 5, 0));
             buttonPanel.add(mainSymbol, BorderLayout.CENTER);
             buttonPanel.add(secondarySymbol, BorderLayout.SOUTH);
+
+            buttonPanel.addMouseListener(new MouseAdapter() {
+
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    if (e.getButton() == MouseEvent.BUTTON1) {
+                        SymbolSelection symbolSelection = new SymbolSelection(parent);
+                        symbolSelection.setVisible(true);
+                    }
+                }
+                
+            });
 
             this.add(buttonPanel);
         }

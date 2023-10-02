@@ -81,7 +81,7 @@ public class DiscreteMathEditor extends JFrame {
         sideBar.add(numPadInfo, BorderLayout.NORTH);
 
         // a display to remind user the key mappings of the numpad
-        JPanel numPad = new NumPad();
+        JPanel numPad = new NumPad(this);
         numPad.setBackground(backgroundColor);
         numPad.setBorder(BorderFactory.createEmptyBorder(verticalPadding, horizontalPadding, verticalPadding, horizontalPadding));
         sideBar.add(numPad, BorderLayout.CENTER);
