@@ -12,6 +12,7 @@ import javax.swing.*;
 public class TopBarMenu extends JMenuBar{
 
     private File file;
+    private SaveMenu saveMenu;
     
     public TopBarMenu(JTextArea textArea) {
 
@@ -52,8 +53,9 @@ public class TopBarMenu extends JMenuBar{
         saveAsMenuItem.setForeground(textColor);
         exitMenuItem.setForeground(textColor);
 
+        this.saveMenu = new SaveMenu(true, textArea, this);
         openMenuItem.addActionListener(new OpenMenu(textArea, this));
-        saveMenuItem.addActionListener(new SaveMenu(true, textArea, this));
+        saveMenuItem.addActionListener(this.saveMenu);
         saveAsMenuItem.addActionListener(new SaveMenu(false, textArea, this));
         exitMenuItem.addActionListener(new ExitMenu());
 
@@ -86,5 +88,9 @@ public class TopBarMenu extends JMenuBar{
 
     public void setFile(File file) {
         this.file = file;
+        this.saveMenu.setFile(file);
+        // whenever the topbar stores the file as it's file, it should update the save menu so it knows the current file
+        // is what it should be working with. For example, when you open a new file, this is called and the savemenu already exists
+        // and it needs to have its file updated
     }
 }

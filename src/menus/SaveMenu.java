@@ -71,7 +71,7 @@ public class SaveMenu implements ActionListener {
         }
     }
 
-    private void setFile(File file) {
+    protected void setFile(File file) {
         this.currentFile = file;
     }
     

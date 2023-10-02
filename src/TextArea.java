@@ -31,7 +31,7 @@ public class TextArea extends JTextArea {
         this.setBorder(compoundBorder);
 
         // Dialog is a font that supports the correct unicode characters
-        Font font = new Font("Dialog", Font.PLAIN, 24);
+        Font font = new Font("Dialog", Font.PLAIN, 18);
         this.setFont(font);
 
         this.setWrapStyleWord(true);
