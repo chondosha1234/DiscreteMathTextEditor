@@ -26,9 +26,9 @@ public class NumPad extends JPanel {
             {"\u2282", "\u2286"},  // subset and subset equals 
             {"\u2208", "\u2209"},  // set member and not set member
             {"\u222A", "\u2229"},  // set Union and Intersection
-            {"", ""},
-            {"", ""},
-            {"", ""},
+            {"\u2265", "\u2264"},  // greater than / less than or equals
+            {"\u2260", "\u220E"},  // not equal, end proof symbol
+            {"\u00B2", "\u2211"},  // squared superscript / sigma sum
             {"", ""},
         };
 

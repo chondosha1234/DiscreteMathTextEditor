@@ -86,6 +86,30 @@ public class KeyMapper implements KeyListener {
 
                     textArea.insert("\u2229", caretPosition);
                     
+                } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_NUMPAD3) {
+
+                    textArea.insert("\u2265", caretPosition);
+
+                } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD3) {
+
+                    textArea.insert("\u2264", caretPosition);
+                    
+                } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_NUMPAD0) {
+
+                    textArea.insert("\u2260", caretPosition);
+
+                } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD0) {
+
+                    textArea.insert("\u220E", caretPosition);
+                    
+                } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_DECIMAL) {
+
+                    textArea.insert("\u00B2", caretPosition);
+
+                } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_DECIMAL) {
+
+                    textArea.insert("\u2211", caretPosition);
+                    
                 }
     }
 
@@ -105,7 +129,8 @@ public class KeyMapper implements KeyListener {
                     e.getKeyCode() == KeyEvent.VK_NUMPAD1 ||
                     e.getKeyCode() == KeyEvent.VK_NUMPAD2 ||
                     e.getKeyCode() == KeyEvent.VK_NUMPAD3 ||
-                    e.getKeyCode() == KeyEvent.VK_NUMPAD0
+                    e.getKeyCode() == KeyEvent.VK_NUMPAD0 ||
+                    e.getKeyCode() == KeyEvent.VK_DECIMAL
                 )) {
 
                     String text = textArea.getText();
