@@ -11,7 +11,7 @@ public class KeyMapper implements KeyListener {
     private JTextArea textArea;
 
     // Default symbols, can be changed later
-    String[][] selectedSymbols = {
+    private static String[][] selectedSymbols = {
             {"\u222B", "\u221E"},  // integral and infinity
             {"", ""},
             {"", ""},
@@ -172,7 +172,9 @@ public class KeyMapper implements KeyListener {
                     e.getKeyCode() == KeyEvent.VK_NUMPAD3 ||
                     e.getKeyCode() == KeyEvent.VK_NUMPAD0 ||
                     e.getKeyCode() == KeyEvent.VK_DECIMAL ||
-                    e.getKeyCode() == KeyEvent.VK_DIVIDE
+                    e.getKeyCode() == KeyEvent.VK_DIVIDE  ||
+                    e.getKeyCode() == KeyEvent.VK_MULTIPLY ||
+                    e.getKeyCode() == KeyEvent.VK_SUBTRACT
                 )) {
 
                     String text = textArea.getText();
@@ -199,7 +201,7 @@ public class KeyMapper implements KeyListener {
         
     }
 
-    public void setSelectedSymbols(String primarySymbol, String secondarySymbol, int index) {
+    public static void setSelectedSymbols(String primarySymbol, String secondarySymbol, int index) {
         selectedSymbols[index][0] = primarySymbol;
         selectedSymbols[index][1] = secondarySymbol;
     }

@@ -34,11 +34,12 @@ public class NumPad extends JPanel {
     public NumPad(JFrame parent) {
 
         setLayout(new GridLayout(5, 3, 10, 5));
+        int indexCounter = 0;
 
         // for each label pair create a button component and put the 2 symbols on it so it looks like numpad
         for (String[] labelPair : buttons) {
 
-            ButtonPanel buttonPanel = new ButtonPanel(new BorderLayout());
+            ButtonPanel buttonPanel = new ButtonPanel(new BorderLayout(), indexCounter);
             buttonPanel.setSymbols(labelPair[0], labelPair[1]);
 
             buttonPanel.addMouseListener(new MouseAdapter() {
@@ -55,6 +56,7 @@ public class NumPad extends JPanel {
             });
 
             this.add(buttonPanel);
+            indexCounter++;
         }
     }
 

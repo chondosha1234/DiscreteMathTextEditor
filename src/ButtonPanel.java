@@ -14,12 +14,15 @@ public class ButtonPanel extends JPanel implements DialogListener {
 
     private JLabel primarySymbol;
     private JLabel secondarySymbol;
+    private int buttonIndex;
 
-    public ButtonPanel(LayoutManager manager) {
+    public ButtonPanel(LayoutManager manager, int buttonIndex) {
         super(manager);
         this.setMaximumSize(new Dimension(50, 10));
         this.setBackground(Color.LIGHT_GRAY);
         this.setBorder(new LineBorder(Color.BLACK));
+
+        this.buttonIndex = buttonIndex;
 
         // initialize the labels, they will be set to defaults in numpad
         primarySymbol = new JLabel("");
@@ -38,7 +41,8 @@ public class ButtonPanel extends JPanel implements DialogListener {
 
     @Override
     public void onDialogClose(String primary, String secondary) {
-        
+        setSymbols(primary, secondary);
+        KeyMapper.setSelectedSymbols(primary, secondary, buttonIndex);
     }
     
     public void setSymbols(String primary, String secondary) {
