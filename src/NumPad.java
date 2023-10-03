@@ -18,9 +18,12 @@ public class NumPad extends JPanel {
 
     public NumPad(JFrame parent) {
 
-        setLayout(new GridLayout(4, 3, 10, 5));
+        setLayout(new GridLayout(5, 3, 10, 5));
 
         String[][] buttons = {
+            {"\u222B", "\u221E"},  // integral and infinity
+            {"", ""},
+            {"", ""},
             {"\u2227", "\u2228"},  // logical AND and OR
             {"\u00AC", "\u2234"},  // logical NOT and THEREFORE 
             {"\u2192", "\u2194"},  // implication and biconditional arrows
@@ -38,7 +41,7 @@ public class NumPad extends JPanel {
         // for each label pair create a button component and put the 2 symbols on it so it looks like numpad
         for (String[] labelPair : buttons) {
 
-            JPanel buttonPanel = new JPanel(new BorderLayout());
+            ButtonPanel buttonPanel = new ButtonPanel(new BorderLayout());
             JLabel mainSymbol = new JLabel(labelPair[0]);
             JLabel secondarySymbol = new JLabel(labelPair[1]);
 
@@ -46,11 +49,6 @@ public class NumPad extends JPanel {
             mainSymbol.setHorizontalAlignment(SwingConstants.CENTER); 
             secondarySymbol.setFont(new Font("Dialog", Font.PLAIN, 12)); 
             secondarySymbol.setHorizontalAlignment(SwingConstants.LEFT); 
-
-            buttonPanel.setMaximumSize(new Dimension(50, 10));
-            //buttonPanel.setPreferredSize(new Dimension(50, 50));
-            buttonPanel.setBackground(Color.LIGHT_GRAY);
-            buttonPanel.setBorder(new LineBorder(Color.BLACK));
 
             mainSymbol.setBorder(BorderFactory.createEmptyBorder(5, 0, 0, 0));
             secondarySymbol.setBorder(BorderFactory.createEmptyBorder(0, 5, 5, 0));
@@ -63,6 +61,7 @@ public class NumPad extends JPanel {
                 public void mouseClicked(MouseEvent e) {
                     if (e.getButton() == MouseEvent.BUTTON1) {
                         SymbolSelection symbolSelection = new SymbolSelection(parent);
+                        symbolSelection.setDialogListener(buttonPanel);
                         symbolSelection.setVisible(true);
                     }
                 }
