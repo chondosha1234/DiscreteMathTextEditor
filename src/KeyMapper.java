@@ -10,6 +10,24 @@ public class KeyMapper implements KeyListener {
 
     private JTextArea textArea;
 
+    // Default symbols, can be changed later
+    String[][] selectedSymbols = {
+            {"\u222B", "\u221E"},  // integral and infinity
+            {"", ""},
+            {"", ""},
+            {"\u2227", "\u2228"},  // logical AND and OR
+            {"\u00AC", "\u2234"},  // logical NOT and THEREFORE 
+            {"\u2192", "\u2194"},  // implication and biconditional arrows
+            {"\u2261", "\u2262"},  // equivalent and not equivalent
+            {"\u2203", "\u2200"},  // Existential and Universal symbols
+            {"\u2282", "\u2286"},  // subset and subset equals 
+            {"\u2208", "\u2209"},  // set member and not set member
+            {"\u222A", "\u2229"},  // set Union and Intersection
+            {"\u2265", "\u2264"},  // greater than / less than or equals
+            {"\u2260", "\u220E"},  // not equal, end proof symbol
+            {"\u00B2", "\u2211"}  // squared superscript / sigma sum
+    };
+
     public KeyMapper(JTextArea textArea) {
         this.textArea = textArea;
     }
@@ -21,94 +39,117 @@ public class KeyMapper implements KeyListener {
                 
                 // each pair of if / else statements here accounts for a numpad button with and without the ctrl key pressed 
                 // the check for ctrl not pressed prevents the logic from always just choosing the not pressed option first
+                if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_DIVIDE) {
 
-                if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD7) {
+                    textArea.insert(selectedSymbols[0][0], caretPosition);
 
-                    textArea.insert("\u2227", caretPosition);
+                } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_DIVIDE) {
+
+                    textArea.insert(selectedSymbols[0][1], caretPosition);
+
+                } else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_MULTIPLY) {
+
+                    textArea.insert(selectedSymbols[1][0], caretPosition);
+
+                } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_MULTIPLY) {
+
+                    textArea.insert(selectedSymbols[1][1], caretPosition);
+
+                } else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_SUBTRACT) {
+
+                    textArea.insert(selectedSymbols[2][0], caretPosition);
+
+                } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_SUBTRACT) {
+
+                    textArea.insert(selectedSymbols[2][1], caretPosition);
+
+                } else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD7) {
+
+                    textArea.insert(selectedSymbols[3][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD7) {
 
-                    textArea.insert("\u2228", caretPosition);
+                    textArea.insert(selectedSymbols[3][1], caretPosition);
 
                 } else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD8) {
 
-                    textArea.insert("\u00AC", caretPosition);
+                    textArea.insert(selectedSymbols[4][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD8) {
 
-                    textArea.insert("\u2234", caretPosition);
+                    textArea.insert(selectedSymbols[4][1], caretPosition);
 
                 } else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD9) {
 
-                    textArea.insert("\u2192", caretPosition);
+                    textArea.insert(selectedSymbols[5][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD9) {
 
-                    textArea.insert("\u2194", caretPosition);
+                    textArea.insert(selectedSymbols[5][1], caretPosition);
                     
                 }else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD4) {
 
-                    textArea.insert("\u2261", caretPosition);
+                    textArea.insert(selectedSymbols[6][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD4) {
 
-                    textArea.insert("\u2262", caretPosition);
+                    textArea.insert(selectedSymbols[6][1], caretPosition);
                     
                 } else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD5) {
 
-                    textArea.insert("\u2203", caretPosition);
+                    textArea.insert(selectedSymbols[7][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD5) {
 
-                    textArea.insert("\u2200", caretPosition);
+                    textArea.insert(selectedSymbols[7][1], caretPosition);
                     
                 } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_NUMPAD6) {
 
-                    textArea.insert("\u2282", caretPosition);
+                    textArea.insert(selectedSymbols[8][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD6) {
 
-                    textArea.insert("\u2286", caretPosition);
+                    textArea.insert(selectedSymbols[8][1], caretPosition);
                     
                 } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_NUMPAD1) {
 
-                    textArea.insert("\u2208", caretPosition);
+                    textArea.insert(selectedSymbols[9][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD1) {
 
-                    textArea.insert("\u2209", caretPosition);
+                    textArea.insert(selectedSymbols[9][1], caretPosition);
                     
                 } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_NUMPAD2) {
 
-                    textArea.insert("\u222A", caretPosition);
+                    textArea.insert(selectedSymbols[10][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD2) {
 
-                    textArea.insert("\u2229", caretPosition);
+                    textArea.insert(selectedSymbols[10][1], caretPosition);
                     
                 } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_NUMPAD3) {
 
-                    textArea.insert("\u2265", caretPosition);
+                    textArea.insert(selectedSymbols[11][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD3) {
 
-                    textArea.insert("\u2264", caretPosition);
+                    textArea.insert(selectedSymbols[11][1], caretPosition);
                     
                 } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_NUMPAD0) {
 
-                    textArea.insert("\u2260", caretPosition);
+                    textArea.insert(selectedSymbols[12][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD0) {
 
-                    textArea.insert("\u220E", caretPosition);
+                    textArea.insert(selectedSymbols[12][1], caretPosition);
                     
                 } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_DECIMAL) {
 
-                    textArea.insert("\u00B2", caretPosition);
+                    textArea.insert(selectedSymbols[13][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_DECIMAL) {
 
-                    textArea.insert("\u2211", caretPosition);
+                    textArea.insert(selectedSymbols[13][1], caretPosition);
                     
                 }
     }
@@ -130,7 +171,8 @@ public class KeyMapper implements KeyListener {
                     e.getKeyCode() == KeyEvent.VK_NUMPAD2 ||
                     e.getKeyCode() == KeyEvent.VK_NUMPAD3 ||
                     e.getKeyCode() == KeyEvent.VK_NUMPAD0 ||
-                    e.getKeyCode() == KeyEvent.VK_DECIMAL
+                    e.getKeyCode() == KeyEvent.VK_DECIMAL ||
+                    e.getKeyCode() == KeyEvent.VK_DIVIDE
                 )) {
 
                     String text = textArea.getText();
@@ -155,6 +197,11 @@ public class KeyMapper implements KeyListener {
     @Override
     public void keyTyped(KeyEvent e) {
         
+    }
+
+    public void setSelectedSymbols(String primarySymbol, String secondarySymbol, int index) {
+        selectedSymbols[index][0] = primarySymbol;
+        selectedSymbols[index][1] = secondarySymbol;
     }
 
 }

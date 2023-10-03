@@ -1,6 +1,9 @@
+import java.awt.Dialog;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.DefaultListModel;
@@ -15,7 +18,10 @@ import javax.swing.ListSelectionModel;
 
 public class SymbolSelection extends JDialog {
     
+    private DialogListener dialogListener;
     private DefaultListModel<String> symbolList;
+    private String primarySelected;
+    private String secondarySelected;
 
     public SymbolSelection(JFrame parent) {
 
@@ -42,6 +48,8 @@ public class SymbolSelection extends JDialog {
         JList<String> secondarySymbolList = new JList<>(symbolList);
         primarySymbolList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         secondarySymbolList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        primarySymbolList.setSelectedIndex(0);
+        secondarySymbolList.setSelectedIndex(0);
 
         JScrollPane primaryScrollPane = new JScrollPane(primarySymbolList);
         JScrollPane secondaryScrollPane = new JScrollPane(secondarySymbolList);
@@ -52,6 +60,28 @@ public class SymbolSelection extends JDialog {
         JButton cancel = new JButton("Cancel");
         confirm.setPreferredSize(new Dimension(100, 30));
         cancel.setPreferredSize(new Dimension(100, 30));
+        
+        confirm.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // when confirm is pressed, set the return symbols to whatever is selected 
+                // the lists have default indices, so they should never be null
+                primarySelected = primarySymbolList.getSelectedValue();
+                secondarySelected = secondarySymbolList.getSelectedValue();
+                sendData(primarySelected, secondarySelected);
+            }
+            
+        });
+
+        cancel.addActionListener(new ActionListener(){
+            // cancel just closes dialog
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+            }
+
+        });
 
         this.setLayout(new GridLayout(3, 1));
         JPanel labels = new JPanel(new FlowLayout());
@@ -76,6 +106,15 @@ public class SymbolSelection extends JDialog {
         this.setLocationRelativeTo(null);
     }
 
+    public void setDialogListener(DialogListener listener) {
+        this.dialogListener = listener;
+    }
 
+    private void sendData(String primary, String secondary) {
+        if (dialogListener != null) {
+            dialogListener.onDialogClose(primary, secondary);
+        }
+        dispose();
+    }
 
 }
