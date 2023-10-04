@@ -42,6 +42,7 @@ public class NumPad extends JPanel {
             ButtonPanel buttonPanel = new ButtonPanel(new BorderLayout(), indexCounter);
             buttonPanel.setSymbols(labelPair[0], labelPair[1]);
 
+            // clicking on numpad button will launch the symbolSelection dialog 
             buttonPanel.addMouseListener(new MouseAdapter() {
 
                 @Override
@@ -60,6 +61,10 @@ public class NumPad extends JPanel {
         }
     }
 
+    /*
+     * changes the gui to show new symbols
+     * this is called alongside the updates of key mappings and button panel update
+     */
     public void updateNumpadSymbols(String primary, String secondary, int index) {
         buttons[index][0] = primary;
         buttons[index][1] = secondary;

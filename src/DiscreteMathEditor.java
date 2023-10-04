@@ -40,6 +40,7 @@ public class DiscreteMathEditor extends JFrame {
         mainWindow.setBackground(backgroundColor);
         mainWindow.setForeground(textColor);
 
+        // background behind the text area
         JPanel backDrop = new JPanel(new BorderLayout());
         backDrop.setBackground(Color.BLACK);
         Border backDropInset = BorderFactory.createEmptyBorder(25, 100, 25, 100);

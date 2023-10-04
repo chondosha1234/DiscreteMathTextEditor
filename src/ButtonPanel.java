@@ -10,6 +10,13 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
+/*
+ * ButtonPanel class represents one button on the numpad diagram 
+ * the button can be clicked to launch the symbol selection dialog and implements dialoglistener interface.
+ * button has 2 symbol variables that can be changed and an index to track which button has opened the 
+ * symbol selection dialog
+ * 
+ */
 public class ButtonPanel extends JPanel implements DialogListener {
 
     private JLabel primarySymbol;
@@ -17,6 +24,7 @@ public class ButtonPanel extends JPanel implements DialogListener {
     private int buttonIndex;
 
     public ButtonPanel(LayoutManager manager, int buttonIndex) {
+        
         super(manager);
         this.setMaximumSize(new Dimension(50, 10));
         this.setBackground(Color.LIGHT_GRAY);
@@ -39,8 +47,12 @@ public class ButtonPanel extends JPanel implements DialogListener {
         this.add(secondarySymbol, BorderLayout.SOUTH);
     }
 
+    /*
+     * Callback method from the symbol selection dialog class
+     */
     @Override
     public void onDialogClose(String primary, String secondary) {
+        // change the button panel symbols, and also change the keymapper mappings
         setSymbols(primary, secondary);
         KeyMapper.setSelectedSymbols(primary, secondary, buttonIndex);
     }

@@ -5,8 +5,15 @@ import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.plaf.basic.BasicScrollBarUI;
 
+
+/*
+ * Custom scroll bar ui class to style the scroll bars for both the main text area 
+ * and the symbol lists in the symbol selection class 
+ * 
+ */
 public class CustomScrollBarUI extends BasicScrollBarUI {
-     @Override
+    
+    @Override
     protected void configureScrollBarColors() {
         thumbColor = new Color(90, 90, 90); // Set the thumb color to grey
         trackColor = new Color(40, 40, 40); // Set the track color to white (background)
