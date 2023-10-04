@@ -71,6 +71,7 @@ public class DiscreteMathEditor extends JFrame {
         toggleSideBarButton.setPreferredSize(new Dimension(25, 25));
         sideBar.add(toggleSideBarButton, BorderLayout.SOUTH);
 
+        // text information to explain to user
         JLabel numPadInfo = new JLabel("<html>These are the mappings of your numpad. Hold ctrl to use the secondary mappings. Make sure your numlock is on.</html>");
         numPadInfo.setBackground(backgroundColor);
         numPadInfo.setForeground(textColor);
@@ -104,7 +105,9 @@ public class DiscreteMathEditor extends JFrame {
             }
         });
 
+        // scroll pane holds the text area inside it
         JScrollPane scrollPane = new JScrollPane(textArea);
+        scrollPane.getVerticalScrollBar().setUI(new CustomScrollBarUI());
         scrollPane.setBorder(null);
         backDrop.add(scrollPane, BorderLayout.CENTER);
         
