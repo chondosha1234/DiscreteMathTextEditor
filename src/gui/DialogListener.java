@@ -1,3 +1,4 @@
+package gui;
 
 /*
  * Dialog listener interface helps to connect the symbolSelection dialog class to the 

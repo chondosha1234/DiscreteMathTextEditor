@@ -1,3 +1,4 @@
+package symbols;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dialog;
@@ -17,6 +18,9 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
+
+import gui.CustomScrollBarUI;
+import gui.DialogListener;
 
 public class SymbolSelection extends JDialog {
     
