@@ -18,7 +18,7 @@ public class NumPad extends JPanel {
 
     private String[][] buttons = {
             {"\u222B", "\u221E"},  // integral and infinity
-            {"", ""},
+            {"\u2090\u222B\u1d47", ""},
             {"", ""},
             {"\u2227", "\u2228"},  // logical AND and OR
             {"\u00AC", "\u2234"},  // logical NOT and THEREFORE 

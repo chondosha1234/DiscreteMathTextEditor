@@ -39,9 +39,30 @@ public class SymbolSelection extends JDialog {
         Color textColor = new Color(220, 220, 220); // Light text
 
         String[] symbols = {
-            "\u2227", "\u2228", "\u00AC", "\u2234", "\u2192", "\u2194", "\u2261", "\u2262",
-            "\u2203", "\u2200", "\u2282", "\u2286", "\u2208", "\u2209", "\u222A", "\u2229",
-            "\u2265", "\u2264", "\u2260", "\u220E", "\u00B2", "\u2211"
+            "\u2227",           // logical AND
+            "\u2228",           // logical OR
+            "\u00AC",           // logical NOT
+            "\u2234",           // Therefore
+            "\u2192",           // implication arrow
+            "\u2194",           // biconditional arrow
+            "\u2261",           // equivalent 
+            "\u2262",           // not equivalent
+            "\u2203",           // existential
+            "\u2200",           // universal 
+            "\u2282",           // subset
+            "\u2286",           // subset equals
+            "\u2208",           // set member
+            "\u2209",           // not set member
+            "\u222A",           // set union
+            "\u2229",           // set intersection
+            "\u2265",           // greater than or equals
+            "\u2264",           // less than or equals
+            "\u2260",           // not equal
+            "\u220E",           // end proof square
+            "\u00B2",           // 2 superscript for square
+            "\u2211",           // big sigma sum
+            "\u222B",           // integral sign
+            "\u221E",           // infinity
         };
 
         for (String s : symbols) {
