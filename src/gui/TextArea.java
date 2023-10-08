@@ -14,7 +14,6 @@ import javax.swing.text.PlainDocument;
 public class TextArea extends JTextArea {
 
     private int maxColumns = 50;
-    private int maxRows = 50;
     
     public TextArea() {
 

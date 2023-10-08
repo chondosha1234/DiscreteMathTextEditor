@@ -13,9 +13,9 @@ public class KeyMapper implements KeyListener {
 
     // Default symbols, can be changed later
     private static String[][] selectedSymbols = {
-            {"\u222B", "\u221E"},  // integral and infinity
-            {"", ""},
-            {"", ""},
+            {"\u222B", "\u2211"},  // integral and sigma sum
+            {"\u2205", "\u2218"},  //  null set and compose function
+            {"\u221E", ""},  // infinity
             {"\u2227", "\u2228"},  // logical AND and OR
             {"\u00AC", "\u2234"},  // logical NOT and THEREFORE 
             {"\u2192", "\u2194"},  // implication and biconditional arrows
@@ -26,7 +26,7 @@ public class KeyMapper implements KeyListener {
             {"\u222A", "\u2229"},  // set Union and Intersection
             {"\u2265", "\u2264"},  // greater than / less than or equals
             {"\u2260", "\u220E"},  // not equal, end proof symbol
-            {"\u00B2", "\u2211"}  // squared superscript / sigma sum
+            {"\u00B2", "\u00B3"}   // squared superscript / cubed superscript
     };
 
     public KeyMapper(JTextArea textArea) {

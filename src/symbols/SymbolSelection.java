@@ -1,10 +1,9 @@
 package symbols;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dialog;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -60,9 +59,12 @@ public class SymbolSelection extends JDialog {
             "\u2260",           // not equal
             "\u220E",           // end proof square
             "\u00B2",           // 2 superscript for square
+            "\u00B3",           // 3 superscript for cubing
             "\u2211",           // big sigma sum
             "\u222B",           // integral sign
             "\u221E",           // infinity
+            "\u2205",           // null set
+            "\u2218",           // compose function sign
         };
 
         for (String s : symbols) {
@@ -158,10 +160,15 @@ public class SymbolSelection extends JDialog {
         this.setLocationRelativeTo(null);
     }
 
+
     public void setDialogListener(DialogListener listener) {
         this.dialogListener = listener;
     }
 
+    /*
+     * Sends back 2 strings for secondary and primary symbols 
+     * uses dialog listener callback (this will be a buttonPanel object)
+     */
     private void sendData(String primary, String secondary) {
         if (dialogListener != null) {
             dialogListener.onDialogClose(primary, secondary);

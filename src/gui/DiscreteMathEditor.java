@@ -36,7 +36,6 @@ public class DiscreteMathEditor extends JFrame {
 
         Color backgroundColor = new Color(30, 30, 30); // Dark background
         Color textColor = new Color(220, 220, 220); // Light text
-        Color borderColor = new Color(60, 60, 60); // Border color
         
         this.setBackground(backgroundColor);
         mainWindow.setBackground(backgroundColor);
