@@ -23,7 +23,9 @@ public class DiscreteMathEditor extends JFrame {
     public DiscreteMathEditor() {
 
         setTitle("Discrete Math");
-        setSize(1000, 650);
+        // set screen to fullscreen
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        // center window
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
