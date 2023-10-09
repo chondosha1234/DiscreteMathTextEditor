@@ -35,8 +35,8 @@ public class TextArea extends JTextArea {
         Font font = new Font("Dialog", Font.PLAIN, 18);
         this.setFont(font);
 
-        //this.setWrapStyleWord(true);
-        //this.setLineWrap(true);
+        this.setWrapStyleWord(true);
+        this.setLineWrap(true);
 
         /* 
         TextAreaDocumentFilter dmdf = new TextAreaDocumentFilter();
