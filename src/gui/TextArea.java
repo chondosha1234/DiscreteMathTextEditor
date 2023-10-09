@@ -4,6 +4,7 @@ import java.awt.Font;
 
 import javax.swing.BorderFactory;
 import javax.swing.JTextArea;
+import javax.swing.JTextPane;
 import javax.swing.border.Border;
 import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
@@ -34,8 +35,8 @@ public class TextArea extends JTextArea {
         Font font = new Font("Dialog", Font.PLAIN, 18);
         this.setFont(font);
 
-        this.setWrapStyleWord(true);
-        this.setLineWrap(true);
+        //this.setWrapStyleWord(true);
+        //this.setLineWrap(true);
 
         /* 
         TextAreaDocumentFilter dmdf = new TextAreaDocumentFilter();
