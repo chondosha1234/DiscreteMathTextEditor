@@ -26,7 +26,7 @@ public class DiscreteMathDocumentFilter extends DocumentFilter {
             int overflow = currentColumn + text.length() - maxColumns;
             text = text.substring(0, text.length() - overflow);
             super.insertString(fb, offset, text, attr);
-            addNewPage(); // Add a new page when the current line is full
+            //addNewPage(); // Add a new page when the current line is full
         } else {
             super.insertString(fb, offset, text, attr);
         }

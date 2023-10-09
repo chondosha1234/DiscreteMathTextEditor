@@ -58,13 +58,23 @@ public class SymbolSelection extends JDialog {
             "\u2264",           // less than or equals
             "\u2260",           // not equal
             "\u220E",           // end proof square
+            "\u2070",           // superscript 0
+            "\u00B9",           // superscript 1
             "\u00B2",           // 2 superscript for square
             "\u00B3",           // 3 superscript for cubing
+            "\u2074",           // superscript 4
+            "\u2075",           // superscript 5
+            "\u2076",           // superscript 6
+            "\u2077",           // superscript 7
+            "\u2078",           // superscript 8
+            "\u2079",           // superscript 9
             "\u2211",           // big sigma sum
             "\u222B",           // integral sign
             "\u221E",           // infinity
             "\u2205",           // null set
             "\u2218",           // compose function sign
+            "\u221A",           // square root
+            "\u221B",           // cubed root
         };
 
         for (String s : symbols) {

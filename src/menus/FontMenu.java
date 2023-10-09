@@ -8,16 +8,15 @@ import java.awt.event.ActionListener;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JTextArea;
-import javax.swing.JTextPane;
 
 import gui.ColorScheme;
 
 public class FontMenu implements ActionListener {
 
-    private JTextPane textArea;
+    private JTextArea textArea;
     private JMenu fontSizeMenu;
 
-    public FontMenu(JTextPane textArea) {
+    public FontMenu(JTextArea textArea) {
 
         this.textArea = textArea;
         fontSizeMenu = new JMenu();
