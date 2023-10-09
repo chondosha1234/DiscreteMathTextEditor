@@ -17,7 +17,7 @@ import java.awt.event.ActionListener;
 public class DiscreteMathEditor extends JFrame {
 
     private JPanel mainWindow;
-    private JTextArea textArea;
+    private JTextPane textArea;
     private boolean isSideBarCollapsed;
 
     public DiscreteMathEditor() {
