@@ -8,13 +8,14 @@ import java.io.IOException;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
+import javax.swing.JTextPane;
 
 public class OpenMenu implements ActionListener {
 
-    private JTextArea textArea;
+    private JTextPane textArea;
     private TopBarMenu parent;
     
-    public OpenMenu(JTextArea textArea, TopBarMenu parent){
+    public OpenMenu(JTextPane textArea, TopBarMenu parent){
         this.textArea = textArea;
         this.parent = parent;
     }

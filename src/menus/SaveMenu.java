@@ -10,15 +10,16 @@ import java.io.IOException;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
+import javax.swing.JTextPane;
 
 public class SaveMenu implements ActionListener {
 
-    private JTextArea textArea;
+    private JTextPane textArea;
     private TopBarMenu parent;
     private File currentFile;
     private boolean saveAsFlag; // true for the save button, false for saveAs button
 
-    public SaveMenu(boolean saveAsFlag, JTextArea textArea, TopBarMenu parent) {
+    public SaveMenu(boolean saveAsFlag, JTextPane textArea, TopBarMenu parent) {
         this.textArea = textArea;
         this.parent = parent;
         this.currentFile = parent.getFile();

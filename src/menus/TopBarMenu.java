@@ -14,7 +14,7 @@ public class TopBarMenu extends JMenuBar {
     private File file;
     private SaveMenu saveMenu;
     
-    public TopBarMenu(JTextArea textArea) {
+    public TopBarMenu(JTextPane textArea) {
 
         this.file = null;
 

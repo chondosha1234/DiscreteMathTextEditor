@@ -11,6 +11,9 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
 import javax.swing.text.DocumentFilter;
 import javax.swing.text.PlainDocument;
+import javax.swing.text.html.HTMLDocument;
+import javax.swing.text.html.HTMLEditorKit;
+import javax.swing.text.html.StyleSheet;
 
 public class TextArea extends JTextPane {
 
@@ -22,6 +25,31 @@ public class TextArea extends JTextPane {
         Color textColor = new Color(220, 220, 220); // Light text
         Color borderColor = new Color(60, 60, 60); // Border color
 
+
+        // Dialog is a font that supports the correct unicode characters
+        Font font = new Font("Dialog", Font.PLAIN, 18);
+
+        // set content type to text/html for styling purposes, like superscript / subscript
+        this.setContentType("text/html");
+
+        // need an html editor kit to make changes 
+        HTMLEditorKit kit = new HTMLEditorKit();
+        this.setEditorKit(kit);
+
+        // document being stored in the jtextpane
+        HTMLDocument doc = new HTMLDocument();
+        this.setDocument(doc);
+
+        // get stylesheet of the kit and add rules for text styling
+        StyleSheet styleSheet = kit.getStyleSheet();
+
+        String cssTextColor = String.format("#%02X%02X%02X", Color.BLACK.getRed(), Color.BLACK.getGreen(), Color.BLACK.getBlue());
+        String cssFont = "font-family: " + Font.DIALOG + "; font-size: 18pt;";
+        String cssSuperscript = "sup { vertical-align: super; font-size: smaller; }";
+
+        styleSheet.addRule("body { color: " + cssTextColor + "; " + cssFont + "}");
+        styleSheet.addRule(cssSuperscript);
+
         // setting colors for background, font, caret, and creating borders and margins
         this.setCaretColor(textColor);
         this.setBackground(backgroundColor);
@@ -32,8 +60,8 @@ public class TextArea extends JTextPane {
         this.setBorder(compoundBorder);
 
         // Dialog is a font that supports the correct unicode characters
-        Font font = new Font("Dialog", Font.PLAIN, 18);
-        this.setFont(font);
+        //Font font = new Font("Dialog", Font.PLAIN, 18);
+        //this.setFont(font);
 
         //this.setWrapStyleWord(true);
         //this.setLineWrap(true);
@@ -44,28 +72,10 @@ public class TextArea extends JTextPane {
         p.setDocumentFilter(dmdf);
         */
         
-        /* 
-        // dimensions for 1 page of text
-        int pageWidth = 50;
-        int pageHeight = 50;
-
-        // Calculate the number of characters that fit horizontally and vertically
-        int charWidth = getFontMetrics(font).charWidth('A');
-        int charHeight = getFontMetrics(font).getHeight();
- 
-        // Set the number of rows and columns for the JTextArea
-        int columns = pageWidth / charWidth;    // Set your desired page width
-        int rows = pageHeight / charHeight;      // Set your desired page height
-        this.setRows(rows);
-        this.setColumns(columns);
-
-        this.setWrapStyleWord(true);
-        this.setLineWrap(true);
-        */
 
     }
 
-    private class TextAreaDocumentFilter extends DocumentFilter {
+    private class TextPaneDocumentFilter extends DocumentFilter {
 
         public void insertString(DocumentFilter.FilterBypass fb, int offset, String text, AttributeSet attr) throws BadLocationException {
             Document doc = fb.getDocument();

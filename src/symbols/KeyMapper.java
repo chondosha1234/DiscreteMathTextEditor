@@ -10,7 +10,7 @@ import java.awt.event.*;
  */
 public class KeyMapper implements KeyListener {
 
-    private JTextArea textArea;
+    private JTextPane textArea;
 
     // Default symbols, can be changed later
     private static String[][] selectedSymbols = {
@@ -30,7 +30,7 @@ public class KeyMapper implements KeyListener {
             {"\u00B2", "\u00B3"}   // squared superscript / cubed superscript
     };
 
-    public KeyMapper(JTextArea textArea) {
+    public KeyMapper(JTextPane textArea) {
         this.textArea = textArea;
     }
 
@@ -43,115 +43,115 @@ public class KeyMapper implements KeyListener {
                 // the check for ctrl not pressed prevents the logic from always just choosing the not pressed option first
                 if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_DIVIDE) {
 
-                    textArea.insert(selectedSymbols[0][0], caretPosition);
+                    //textArea.insert(selectedSymbols[0][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_DIVIDE) {
 
-                    textArea.insert(selectedSymbols[0][1], caretPosition);
+                    //textArea.insert(selectedSymbols[0][1], caretPosition);
 
                 } else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_MULTIPLY) {
 
-                    textArea.insert(selectedSymbols[1][0], caretPosition);
+                    //textArea.insert(selectedSymbols[1][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_MULTIPLY) {
 
-                    textArea.insert(selectedSymbols[1][1], caretPosition);
+                    //textArea.insert(selectedSymbols[1][1], caretPosition);
 
                 } else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_SUBTRACT) {
 
-                    textArea.insert(selectedSymbols[2][0], caretPosition);
+                    //textArea.insert(selectedSymbols[2][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_SUBTRACT) {
 
-                    textArea.insert(selectedSymbols[2][1], caretPosition);
+                    //textArea.insert(selectedSymbols[2][1], caretPosition);
 
                 } else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD7) {
 
-                    textArea.insert(selectedSymbols[3][0], caretPosition);
+                    //textArea.insert(selectedSymbols[3][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD7) {
 
-                    textArea.insert(selectedSymbols[3][1], caretPosition);
+                    //textArea.insert(selectedSymbols[3][1], caretPosition);
 
                 } else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD8) {
 
-                    textArea.insert(selectedSymbols[4][0], caretPosition);
+                    //textArea.insert(selectedSymbols[4][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD8) {
 
-                    textArea.insert(selectedSymbols[4][1], caretPosition);
+                    //textArea.insert(selectedSymbols[4][1], caretPosition);
 
                 } else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD9) {
 
-                    textArea.insert(selectedSymbols[5][0], caretPosition);
+                    //textArea.insert(selectedSymbols[5][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD9) {
 
-                    textArea.insert(selectedSymbols[5][1], caretPosition);
+                    //textArea.insert(selectedSymbols[5][1], caretPosition);
                     
                 }else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD4) {
 
-                    textArea.insert(selectedSymbols[6][0], caretPosition);
+                    //textArea.insert(selectedSymbols[6][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD4) {
 
-                    textArea.insert(selectedSymbols[6][1], caretPosition);
+                    //textArea.insert(selectedSymbols[6][1], caretPosition);
                     
                 } else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD5) {
 
-                    textArea.insert(selectedSymbols[7][0], caretPosition);
+                    //textArea.insert(selectedSymbols[7][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD5) {
 
-                    textArea.insert(selectedSymbols[7][1], caretPosition);
+                    //textArea.insert(selectedSymbols[7][1], caretPosition);
                     
                 } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_NUMPAD6) {
 
-                    textArea.insert(selectedSymbols[8][0], caretPosition);
+                    //textArea.insert(selectedSymbols[8][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD6) {
 
-                    textArea.insert(selectedSymbols[8][1], caretPosition);
+                    //textArea.insert(selectedSymbols[8][1], caretPosition);
                     
                 } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_NUMPAD1) {
 
-                    textArea.insert(selectedSymbols[9][0], caretPosition);
+                    //textArea.insert(selectedSymbols[9][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD1) {
 
-                    textArea.insert(selectedSymbols[9][1], caretPosition);
+                    //textArea.insert(selectedSymbols[9][1], caretPosition);
                     
                 } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_NUMPAD2) {
 
-                    textArea.insert(selectedSymbols[10][0], caretPosition);
+                    //textArea.insert(selectedSymbols[10][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD2) {
 
-                    textArea.insert(selectedSymbols[10][1], caretPosition);
+                    //textArea.insert(selectedSymbols[10][1], caretPosition);
                     
                 } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_NUMPAD3) {
 
-                    textArea.insert(selectedSymbols[11][0], caretPosition);
+                    //textArea.insert(selectedSymbols[11][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD3) {
 
-                    textArea.insert(selectedSymbols[11][1], caretPosition);
+                    //textArea.insert(selectedSymbols[11][1], caretPosition);
                     
                 } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_NUMPAD0) {
 
-                    textArea.insert(selectedSymbols[12][0], caretPosition);
+                    //textArea.insert(selectedSymbols[12][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD0) {
 
-                    textArea.insert(selectedSymbols[12][1], caretPosition);
+                    //textArea.insert(selectedSymbols[12][1], caretPosition);
                     
                 } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_DECIMAL) {
 
-                    textArea.insert(selectedSymbols[13][0], caretPosition);
+                    //textArea.insert(selectedSymbols[13][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_DECIMAL) {
 
-                    textArea.insert(selectedSymbols[13][1], caretPosition);
+                    //textArea.insert(selectedSymbols[13][1], caretPosition);
                     
                 }
     }
