@@ -1,4 +1,5 @@
 package symbols;
+
 import javax.swing.*;
 import java.awt.event.*;
 
