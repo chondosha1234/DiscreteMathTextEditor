@@ -1,6 +1,7 @@
 package symbols;
 
-import javax.swing.*;
+import gui.TextArea;
+
 import java.awt.event.*;
 
 /* 
@@ -10,7 +11,7 @@ import java.awt.event.*;
  */
 public class KeyMapper implements KeyListener {
 
-    private JTextArea textArea;
+    private TextArea textArea;
 
     // Default symbols, can be changed later
     private static String[][] selectedSymbols = {
@@ -30,13 +31,19 @@ public class KeyMapper implements KeyListener {
             {"\u00B2", "\u00B3"}   // squared superscript / cubed superscript
     };
 
-    public KeyMapper(JTextArea textArea) {
+    public KeyMapper(TextArea textArea) {
         this.textArea = textArea;
     }
 
 
     @Override
     public void keyPressed(KeyEvent e) {
+
+        // whenever users enters any key, it should set the flag so if they try to exit without saving the application can warn user
+        if (this.textArea.getChangeSinceSave() == false) {
+            this.textArea.setChangeSinceSave(true);
+        }
+
         int caretPosition = textArea.getCaretPosition();
                 
                 // each pair of if / else statements here accounts for a numpad button with and without the ctrl key pressed 

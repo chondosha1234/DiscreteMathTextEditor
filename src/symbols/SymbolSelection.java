@@ -41,6 +41,7 @@ public class SymbolSelection extends JDialog {
             "\u2227",           // logical AND
             "\u2228",           // logical OR
             "\u00AC",           // logical NOT
+            "\u2295",           // XOR 
             "\u2234",           // Therefore
             "\u2192",           // implication arrow
             "\u2194",           // biconditional arrow

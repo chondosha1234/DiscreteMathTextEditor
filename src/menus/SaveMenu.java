@@ -9,16 +9,17 @@ import java.io.IOException;
 
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import javax.swing.JTextArea;
+
+import gui.TextArea;
 
 public class SaveMenu implements ActionListener {
 
-    private JTextArea textArea;
+    private TextArea textArea;
     private TopBarMenu parent;
     private File currentFile;
     private boolean saveAsFlag; // true for the save button, false for saveAs button
 
-    public SaveMenu(boolean saveAsFlag, JTextArea textArea, TopBarMenu parent) {
+    public SaveMenu(boolean saveAsFlag, TextArea textArea, TopBarMenu parent) {
         this.textArea = textArea;
         this.parent = parent;
         this.currentFile = parent.getFile();
@@ -44,7 +45,7 @@ public class SaveMenu implements ActionListener {
     /*
      * Writes content to file that already exists
      */
-    private void saveFile(File file) {
+    public void saveFile(File file) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
             String content = textArea.getText();
             writer.write(content);
@@ -53,13 +54,14 @@ public class SaveMenu implements ActionListener {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, "Error saving file.", "Error", JOptionPane.ERROR_MESSAGE);
         }
+        this.textArea.setChangeSinceSave(false);
     }
 
     /*
      * opens up the built in file chooser, can create new file or overwrite existing
      * calls the saveFile method to do the actual writing of data
      */
-    private void saveAs() {
+    public void saveAs() {
         JFileChooser fileChooser = new JFileChooser();
 
         int choice = fileChooser.showSaveDialog(textArea);

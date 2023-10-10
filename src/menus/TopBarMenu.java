@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.io.File;
 import javax.swing.*;
 
+import gui.TextArea;
+
 /*
  *  Class to build a top bar menu for the top of the Text Editor window.  Will have basic drop down menus, like File, Edit, 
  *  Settings, Help
@@ -14,7 +16,7 @@ public class TopBarMenu extends JMenuBar {
     private File file;
     private SaveMenu saveMenu;
     
-    public TopBarMenu(JTextArea textArea) {
+    public TopBarMenu(TextArea textArea) {
 
         this.file = null;
 
@@ -92,5 +94,9 @@ public class TopBarMenu extends JMenuBar {
         // whenever the topbar stores the file as it's file, it should update the save menu so it knows the current file
         // is what it should be working with. For example, when you open a new file, this is called and the savemenu already exists
         // and it needs to have its file updated
+    }
+
+    public SaveMenu getSaveMenu() {
+        return this.saveMenu;
     }
 }

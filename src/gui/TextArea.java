@@ -15,8 +15,11 @@ import javax.swing.text.PlainDocument;
 public class TextArea extends JTextArea {
 
     private int maxColumns = 50;
+    private boolean changedSinceSave;
     
     public TextArea() {
+
+        changedSinceSave = false;
 
         Color backgroundColor = new Color(30, 30, 30); // Dark background
         Color textColor = new Color(220, 220, 220); // Light text
@@ -63,6 +66,14 @@ public class TextArea extends JTextArea {
         this.setLineWrap(true);
         */
 
+    }
+
+    public void setChangeSinceSave(boolean changed) {
+        this.changedSinceSave = changed;
+    }
+
+    public boolean getChangeSinceSave() {
+        return this.changedSinceSave;
     }
 
     private class TextAreaDocumentFilter extends DocumentFilter {

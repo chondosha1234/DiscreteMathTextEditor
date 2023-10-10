@@ -2,12 +2,16 @@ package gui;
 import javax.swing.*;
 import javax.swing.border.Border;
 
+import menus.SaveMenu;
 import menus.TopBarMenu;
 import symbols.KeyMapper;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.File;
 
 
 /* 
@@ -17,8 +21,9 @@ import java.awt.event.ActionListener;
 public class DiscreteMathEditor extends JFrame {
 
     private JPanel mainWindow;
-    private JTextArea textArea;
+    private TextArea textArea;
     private boolean isSideBarCollapsed;
+    private TopBarMenu topBarMenu;
 
     public DiscreteMathEditor() {
 
@@ -27,7 +32,7 @@ public class DiscreteMathEditor extends JFrame {
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         // center window
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 
         this.isSideBarCollapsed = false;
         int verticalPadding = 10;
@@ -54,7 +59,7 @@ public class DiscreteMathEditor extends JFrame {
         textArea = new TextArea();
 
         // typical top bar menus like file, edit, settings
-        TopBarMenu topBarMenu = new TopBarMenu(textArea);
+        topBarMenu = new TopBarMenu(textArea);
         topBarMenu.setBackground(backgroundColor);
         topBarMenu.setForeground(textColor);
         topBarMenu.setBorderPainted(false);
@@ -118,9 +123,62 @@ public class DiscreteMathEditor extends JFrame {
         // create keymapper object and set it as the keyListener for the text area
         KeyMapper keyMapper = new KeyMapper(textArea);
         textArea.addKeyListener(keyMapper);
+
+        // add window listener to implement custom close operation
+        this.addWindowListener(new WindowAdapter() {
+            
+            @Override
+            public void windowClosing(WindowEvent e) {
+                exitApplication();
+            }
+
+        });
     }
+
 
     public static void addNewPage() {
         
+    }
+
+
+    public void exitApplication() {
+
+        // check if user has typed in textarea since last save
+        if (this.textArea.getChangeSinceSave() == true) {
+
+            int choice = SaveOnCloseDialog.showConfirmDialog(
+                this,
+                "Do you want to save before exiting?",
+                "Save changes",
+                JOptionPane.YES_NO_CANCEL_OPTION
+            );
+
+            // if user wants to save, get the topbarmenu, get the savemenu from the topbarmenu, and use the savefile method
+            if (choice == JOptionPane.YES_OPTION) {
+
+                File currentFile = this.topBarMenu.getFile();
+                SaveMenu saveMenu = this.topBarMenu.getSaveMenu();
+                // check if there is already a current file
+                if (currentFile == null) {
+                    saveMenu.saveAs();
+                } else {
+                    saveMenu.saveFile(currentFile);
+                }
+                System.out.println("clicked yes");
+                dispose();
+
+            } else if (choice == JOptionPane.NO_OPTION) {
+                // users doesn't want to save
+                System.out.println("clicked no");
+                dispose();
+    
+            }
+            System.out.println("clicked cancel");
+            
+
+        } else {
+            // user hasn't made other changes
+                dispose();
+        }
     }
 }
