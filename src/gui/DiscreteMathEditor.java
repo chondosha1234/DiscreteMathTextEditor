@@ -25,6 +25,9 @@ public class DiscreteMathEditor extends JFrame {
     private boolean isSideBarCollapsed;
     private TopBarMenu topBarMenu;
 
+    Color backgroundColor = ColorScheme.BACKGROUND_COLOR;
+    Color textColor = ColorScheme.TEXTCOLOR;
+
     public DiscreteMathEditor() {
 
         setTitle("Discrete Math");
@@ -40,9 +43,6 @@ public class DiscreteMathEditor extends JFrame {
 
         mainWindow = new JPanel(new BorderLayout());
         getContentPane().add(mainWindow);
-
-        Color backgroundColor = new Color(30, 30, 30); // Dark background
-        Color textColor = new Color(220, 220, 220); // Light text
         
         this.setBackground(backgroundColor);
         mainWindow.setBackground(backgroundColor);
@@ -141,10 +141,20 @@ public class DiscreteMathEditor extends JFrame {
     }
 
 
+    /*
+     * Method called when user clicks exit window button
+     */
     public void exitApplication() {
 
         // check if user has typed in textarea since last save
         if (this.textArea.getChangeSinceSave() == true) {
+
+            UIManager.put("OptionPane.background", backgroundColor);
+            UIManager.put("OptionPane.messageForeground", textColor);
+            UIManager.put("Panel.background", backgroundColor);
+            UIManager.put("Button.background", backgroundColor);
+            UIManager.put("Button.foreground", textColor);
+            UIManager.put("Button.border", BorderFactory.createLineBorder(Color.GRAY, 2));
 
             int choice = SaveOnCloseDialog.showConfirmDialog(
                 this,
@@ -164,17 +174,14 @@ public class DiscreteMathEditor extends JFrame {
                 } else {
                     saveMenu.saveFile(currentFile);
                 }
-                System.out.println("clicked yes");
                 dispose();
 
             } else if (choice == JOptionPane.NO_OPTION) {
                 // users doesn't want to save
-                System.out.println("clicked no");
                 dispose();
     
             }
-            System.out.println("clicked cancel");
-            
+            // else user hits cancel
 
         } else {
             // user hasn't made other changes
