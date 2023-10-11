@@ -21,9 +21,9 @@ public class TextArea extends JTextArea {
 
         changedSinceSave = false;
 
-        Color backgroundColor = new Color(30, 30, 30); // Dark background
-        Color textColor = new Color(220, 220, 220); // Light text
-        Color borderColor = new Color(60, 60, 60); // Border color
+        Color backgroundColor = ColorScheme.BACKGROUND_COLOR; // Dark background
+        Color textColor = ColorScheme.TEXTCOLOR; // Light text
+        Color borderColor = ColorScheme.BORDER_COLOR; // Border color
 
         // setting colors for background, font, caret, and creating borders and margins
         this.setCaretColor(textColor);

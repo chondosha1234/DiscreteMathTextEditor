@@ -156,7 +156,7 @@ public class DiscreteMathEditor extends JFrame {
             UIManager.put("Button.foreground", textColor);
             UIManager.put("Button.border", BorderFactory.createLineBorder(Color.GRAY, 2));
 
-            int choice = SaveOnCloseDialog.showConfirmDialog(
+            int choice = JOptionPane.showConfirmDialog(
                 this,
                 "Do you want to save before exiting?",
                 "Save changes",
