@@ -9,6 +9,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
+import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
 
 import symbols.KeyMapper;
@@ -25,6 +26,7 @@ public class ButtonPanel extends JPanel implements DialogListener {
     private JLabel primarySymbol;
     private JLabel secondarySymbol;
     private int buttonIndex;
+    private Color backgroundColor = ColorScheme.BACKGROUND_COLOR;
 
     public ButtonPanel(LayoutManager manager, int buttonIndex) {
         
@@ -41,8 +43,10 @@ public class ButtonPanel extends JPanel implements DialogListener {
 
         primarySymbol.setFont(new Font("Dialog", Font.BOLD, 16)); 
         primarySymbol.setHorizontalAlignment(SwingConstants.CENTER); 
+        primarySymbol.setForeground(backgroundColor);
         secondarySymbol.setFont(new Font("Dialog", Font.PLAIN, 12)); 
         secondarySymbol.setHorizontalAlignment(SwingConstants.LEFT); 
+        secondarySymbol.setForeground(backgroundColor);
 
         primarySymbol.setBorder(BorderFactory.createEmptyBorder(5, 0, 0, 0));
         secondarySymbol.setBorder(BorderFactory.createEmptyBorder(0, 5, 5, 0));
