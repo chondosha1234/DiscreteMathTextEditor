@@ -167,7 +167,7 @@ public class KeyMapper implements KeyListener {
     public void keyReleased(KeyEvent e) {
         int caretPosition = textArea.getCaretPosition();
 
-        // This code is necessary to remove the number generated when the numpad key is pressed 
+        // This code is necessary to remove the number generated when the numpad key is pressed, but leaving the desired symbol
         // Common solutions like using e.consume() do not work on the numpad keys specifically 
         if (!e.isControlDown() && (
                     e.getKeyCode() == KeyEvent.VK_NUMPAD7 || 
@@ -210,6 +210,9 @@ public class KeyMapper implements KeyListener {
         
     }
 
+    /* 
+     * Meethod changes the array of selected symbols which affects the actual mapping of keys 
+     */
     public static void setSelectedSymbols(String primarySymbol, String secondarySymbol, int index) {
         selectedSymbols[index][0] = primarySymbol;
         selectedSymbols[index][1] = secondarySymbol;

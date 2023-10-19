@@ -41,6 +41,7 @@ public class ButtonPanel extends JPanel implements DialogListener {
         primarySymbol = new JLabel("");
         secondarySymbol = new JLabel("");
 
+        // primary and secondary symbol are the 2 math symbols shown on the numpad diagram
         primarySymbol.setFont(new Font("Dialog", Font.BOLD, 16)); 
         primarySymbol.setHorizontalAlignment(SwingConstants.CENTER); 
         primarySymbol.setForeground(backgroundColor);
@@ -59,7 +60,7 @@ public class ButtonPanel extends JPanel implements DialogListener {
      */
     @Override
     public void onDialogClose(String primary, String secondary) {
-        // change the button panel symbols, and also change the keymapper mappings
+        // change the button panel symbols, and also change the keymapper mappings after selecting new symbols
         setSymbols(primary, secondary);
         KeyMapper.setSelectedSymbols(primary, secondary, buttonIndex);
     }

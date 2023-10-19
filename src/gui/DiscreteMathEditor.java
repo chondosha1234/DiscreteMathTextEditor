@@ -181,11 +181,11 @@ public class DiscreteMathEditor extends JFrame {
                 dispose();
     
             }
-            // else user hits cancel
+            // else user hits cancel and nothing happens
 
         } else {
             // user hasn't made other changes
-                dispose();
+            dispose();
         }
     }
 }
