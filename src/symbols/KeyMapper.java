@@ -1,6 +1,9 @@
 package symbols;
 
 import javax.swing.*;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.StyledDocument;
+
 import java.awt.event.*;
 
 /* 
@@ -11,6 +14,7 @@ import java.awt.event.*;
 public class KeyMapper implements KeyListener {
 
     private JTextPane textArea;
+    private StyledDocument doc;
 
     // Default symbols, can be changed later
     private static String[][] selectedSymbols = {
@@ -32,6 +36,7 @@ public class KeyMapper implements KeyListener {
 
     public KeyMapper(JTextPane textArea) {
         this.textArea = textArea;
+        doc = textArea.getStyledDocument();
     }
 
 
@@ -41,11 +46,15 @@ public class KeyMapper implements KeyListener {
                 
                 // each pair of if / else statements here accounts for a numpad button with and without the ctrl key pressed 
                 // the check for ctrl not pressed prevents the logic from always just choosing the not pressed option first
-                if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_DIVIDE) {
+                    if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_DIVIDE) {
+                        try {
+                            doc.insertString(caretPosition, selectedSymbols[0][0], null);
+                        } catch (BadLocationException e1) {
+                            e1.printStackTrace();
+                        }
+                        //textArea.insert(selectedSymbols[0][0], caretPosition);
 
-                    //textArea.insert(selectedSymbols[0][0], caretPosition);
-
-                } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_DIVIDE) {
+                    } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_DIVIDE) {
 
                     //textArea.insert(selectedSymbols[0][1], caretPosition);
 
