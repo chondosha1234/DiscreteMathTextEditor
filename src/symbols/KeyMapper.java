@@ -188,22 +188,32 @@ public class KeyMapper implements KeyListener {
                     e.getKeyCode() == KeyEvent.VK_SUBTRACT
                 )) {
 
-                    String text = textArea.getText();
-                    String newText;
 
-                    if (caretPosition == text.length()) {
-                        // caret or cursor is at end of the line
-                        newText = text.substring(0, text.length()-1);
-                    } else {
-                        // caret or cursor is in middle of the text, need to remove the numpad number at that point 
-                        // instead of just removing the end
-                        String firstHalf = text.substring(0, caretPosition-1);
-                        String secondHalf = text.substring(caretPosition, text.length());
-                        newText = firstHalf + secondHalf;
+                    try {
+
+                        String text = doc.getText(0, doc.getLength());
+                        String newText;
+
+                        if (caretPosition == text.length()) {
+                            // caret or cursor is at end of the line
+                            newText = text.substring(0, text.length()-1);
+                        } else {
+                            // caret or cursor is in middle of the text, need to remove the numpad number at that point 
+                            // instead of just removing the end
+                            String firstHalf = text.substring(0, caretPosition-1);
+                            String secondHalf = text.substring(caretPosition, text.length());
+                            newText = firstHalf + secondHalf;
+                        }
+
+                        doc.remove(0, doc.getLength());
+                        doc.insertString(0, newText, null);
+
+                        textArea.setCaretPosition(caretPosition - 1);
+
+                    } catch (BadLocationException e1) {
+                        e1.printStackTrace();
                     }
-                    textArea.setText(newText);
-                    // setting textArea text puts caret at end, but if you type in middle of line, need to have caret placed there
-                    textArea.setCaretPosition(caretPosition-1);
+
                 }
     }
 

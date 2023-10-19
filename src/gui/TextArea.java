@@ -40,13 +40,15 @@ public class TextArea extends JTextPane {
         HTMLDocument doc = new HTMLDocument();
         this.setDocument(doc);
 
-        // get stylesheet of the kit and add rules for text styling
+        // get stylesheet of the doc and add rules for text styling
         StyleSheet styleSheet = doc.getStyleSheet();
 
+        // create string for css text color and font to add to string for rule
         String cssTextColor = String.format("#%02X%02X%02X", textColor.getRed(), textColor.getGreen(), textColor.getBlue());
         String cssFont = "font-family: " + Font.DIALOG + "; font-size: 18pt;";
         String cssSuperscript = "sup { vertical-align: super; font-size: smaller; }";
 
+        // add the css to the stylesheet 
         styleSheet.addRule("body { color: " + cssTextColor + "; " + cssFont + "}");
         styleSheet.addRule(cssSuperscript);
 
