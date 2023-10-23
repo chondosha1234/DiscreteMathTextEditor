@@ -46,120 +46,228 @@ public class KeyMapper implements KeyListener {
                 
                 // each pair of if / else statements here accounts for a numpad button with and without the ctrl key pressed 
                 // the check for ctrl not pressed prevents the logic from always just choosing the not pressed option first
-                    if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_DIVIDE) {
-                        try {
-                            doc.insertString(caretPosition, selectedSymbols[0][0], null);
-                        } catch (BadLocationException e1) {
-                            e1.printStackTrace();
-                        }
+                if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_DIVIDE) {
+                    try {
+                        doc.insertString(caretPosition, selectedSymbols[0][0], null);
+                    } catch (BadLocationException e1) {
+                        e1.printStackTrace();
+                    }
                         //textArea.insert(selectedSymbols[0][0], caretPosition);
 
-                    } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_DIVIDE) {
-
+                } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_DIVIDE) {
+                    try {
+                        doc.insertString(caretPosition, selectedSymbols[0][1], null);
+                    } catch (BadLocationException e1) {
+                        e1.printStackTrace();
+                    }
                     //textArea.insert(selectedSymbols[0][1], caretPosition);
 
                 } else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_MULTIPLY) {
-
+                    try {
+                        doc.insertString(caretPosition, selectedSymbols[1][0], null);
+                    } catch (BadLocationException e1) {
+                        e1.printStackTrace();
+                    }
                     //textArea.insert(selectedSymbols[1][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_MULTIPLY) {
-
+                    try {
+                        doc.insertString(caretPosition, selectedSymbols[1][1], null);
+                    } catch (BadLocationException e1) {
+                        e1.printStackTrace();
+                    }
                     //textArea.insert(selectedSymbols[1][1], caretPosition);
 
                 } else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_SUBTRACT) {
-
+                    try {
+                        doc.insertString(caretPosition, selectedSymbols[2][0], null);
+                    } catch (BadLocationException e1) {
+                        e1.printStackTrace();
+                    }
                     //textArea.insert(selectedSymbols[2][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_SUBTRACT) {
-
+                    try {
+                        doc.insertString(caretPosition, selectedSymbols[2][1], null);
+                    } catch (BadLocationException e1) {
+                        e1.printStackTrace();
+                    }
                     //textArea.insert(selectedSymbols[2][1], caretPosition);
 
                 } else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD7) {
-
+                    try {
+                        doc.insertString(caretPosition, selectedSymbols[3][0], null);
+                    } catch (BadLocationException e1) {
+                        e1.printStackTrace();
+                    }
                     //textArea.insert(selectedSymbols[3][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD7) {
-
+                    try {
+                        doc.insertString(caretPosition, selectedSymbols[3][1], null);
+                    } catch (BadLocationException e1) {
+                        e1.printStackTrace();
+                    }
                     //textArea.insert(selectedSymbols[3][1], caretPosition);
 
                 } else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD8) {
-
+                    try {
+                        doc.insertString(caretPosition, selectedSymbols[4][0], null);
+                    } catch (BadLocationException e1) {
+                        e1.printStackTrace();
+                    }
                     //textArea.insert(selectedSymbols[4][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD8) {
-
+                    try {
+                        doc.insertString(caretPosition, selectedSymbols[4][1], null);
+                    } catch (BadLocationException e1) {
+                        e1.printStackTrace();
+                    }
                     //textArea.insert(selectedSymbols[4][1], caretPosition);
 
                 } else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD9) {
-
+                    try {
+                        doc.insertString(caretPosition, selectedSymbols[5][0], null);
+                    } catch (BadLocationException e1) {
+                        e1.printStackTrace();
+                    }
                     //textArea.insert(selectedSymbols[5][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD9) {
-
+                    try {
+                        doc.insertString(caretPosition, selectedSymbols[5][1], null);
+                    } catch (BadLocationException e1) {
+                        e1.printStackTrace();
+                    }
                     //textArea.insert(selectedSymbols[5][1], caretPosition);
                     
                 }else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD4) {
-
+                    try {
+                        doc.insertString(caretPosition, selectedSymbols[6][0], null);
+                    } catch (BadLocationException e1) {
+                        e1.printStackTrace();
+                    }
                     //textArea.insert(selectedSymbols[6][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD4) {
-
+                    try {
+                        doc.insertString(caretPosition, selectedSymbols[6][1], null);
+                    } catch (BadLocationException e1) {
+                        e1.printStackTrace();
+                    }
                     //textArea.insert(selectedSymbols[6][1], caretPosition);
                     
                 } else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD5) {
-
+                    try {
+                        doc.insertString(caretPosition, selectedSymbols[7][0], null);
+                    } catch (BadLocationException e1) {
+                        e1.printStackTrace();
+                    }
                     //textArea.insert(selectedSymbols[7][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD5) {
-
+                    try {
+                        doc.insertString(caretPosition, selectedSymbols[7][1], null);
+                    } catch (BadLocationException e1) {
+                        e1.printStackTrace();
+                    }
                     //textArea.insert(selectedSymbols[7][1], caretPosition);
                     
                 } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_NUMPAD6) {
-
+                    try {
+                        doc.insertString(caretPosition, selectedSymbols[8][0], null);
+                    } catch (BadLocationException e1) {
+                        e1.printStackTrace();
+                    }
                     //textArea.insert(selectedSymbols[8][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD6) {
-
+                    try {
+                        doc.insertString(caretPosition, selectedSymbols[8][1], null);
+                    } catch (BadLocationException e1) {
+                        e1.printStackTrace();
+                    }
                     //textArea.insert(selectedSymbols[8][1], caretPosition);
                     
                 } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_NUMPAD1) {
-
+                    try {
+                        doc.insertString(caretPosition, selectedSymbols[9][0], null);
+                    } catch (BadLocationException e1) {
+                        e1.printStackTrace();
+                    }
                     //textArea.insert(selectedSymbols[9][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD1) {
-
+                    try {
+                        doc.insertString(caretPosition, selectedSymbols[9][1], null);
+                    } catch (BadLocationException e1) {
+                        e1.printStackTrace();
+                    }
                     //textArea.insert(selectedSymbols[9][1], caretPosition);
                     
                 } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_NUMPAD2) {
-
+                    try {
+                        doc.insertString(caretPosition, selectedSymbols[10][0], null);
+                    } catch (BadLocationException e1) {
+                        e1.printStackTrace();
+                    }
                     //textArea.insert(selectedSymbols[10][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD2) {
-
+                    try {
+                        doc.insertString(caretPosition, selectedSymbols[10][1], null);
+                    } catch (BadLocationException e1) {
+                        e1.printStackTrace();
+                    }
                     //textArea.insert(selectedSymbols[10][1], caretPosition);
                     
                 } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_NUMPAD3) {
-
+                    try {
+                        doc.insertString(caretPosition, selectedSymbols[11][0], null);
+                    } catch (BadLocationException e1) {
+                        e1.printStackTrace();
+                    }
                     //textArea.insert(selectedSymbols[11][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD3) {
-
+                    try {
+                        doc.insertString(caretPosition, selectedSymbols[11][1], null);
+                    } catch (BadLocationException e1) {
+                        e1.printStackTrace();
+                    }
                     //textArea.insert(selectedSymbols[11][1], caretPosition);
                     
                 } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_NUMPAD0) {
-
+                    try {
+                        doc.insertString(caretPosition, selectedSymbols[12][0], null);
+                    } catch (BadLocationException e1) {
+                        e1.printStackTrace();
+                    }
                     //textArea.insert(selectedSymbols[12][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD0) {
-
+                    try {
+                        doc.insertString(caretPosition, selectedSymbols[12][1], null);
+                    } catch (BadLocationException e1) {
+                        e1.printStackTrace();
+                    }
                     //textArea.insert(selectedSymbols[12][1], caretPosition);
                     
                 } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_DECIMAL) {
-
+                    try {
+                        doc.insertString(caretPosition, selectedSymbols[13][0], null);
+                    } catch (BadLocationException e1) {
+                        e1.printStackTrace();
+                    }
                     //textArea.insert(selectedSymbols[13][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_DECIMAL) {
-
+                    try {
+                        doc.insertString(caretPosition, selectedSymbols[13][1], null);
+                    } catch (BadLocationException e1) {
+                        e1.printStackTrace();
+                    }
                     //textArea.insert(selectedSymbols[13][1], caretPosition);
                     
                 }
@@ -190,7 +298,7 @@ public class KeyMapper implements KeyListener {
 
 
                     try {
-
+                        // get the text from doc to change 
                         String text = doc.getText(0, doc.getLength());
                         String newText;
 
@@ -205,9 +313,11 @@ public class KeyMapper implements KeyListener {
                             newText = firstHalf + secondHalf;
                         }
 
+                        // remove the previous text and replace it with new desired text (without the unnecessary char)
                         doc.remove(0, doc.getLength());
                         doc.insertString(0, newText, null);
 
+                        // adjust the caret position
                         textArea.setCaretPosition(caretPosition - 1);
 
                     } catch (BadLocationException e1) {
