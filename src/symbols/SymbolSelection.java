@@ -75,6 +75,7 @@ public class SymbolSelection extends JDialog {
             "\u2218",           // compose function sign
             "\u221A",           // square root
             "\u221B",           // cubed root
+            "\u05D0",           // aleph
         };
 
         for (String s : symbols) {
