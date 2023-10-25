@@ -52,7 +52,7 @@ public class KeyMapper implements KeyListener {
                     } catch (BadLocationException e1) {
                         e1.printStackTrace();
                     }
-                        //textArea.insert(selectedSymbols[0][0], caretPosition);
+
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_DIVIDE) {
                     try {
@@ -60,7 +60,6 @@ public class KeyMapper implements KeyListener {
                     } catch (BadLocationException e1) {
                         e1.printStackTrace();
                     }
-                    //textArea.insert(selectedSymbols[0][1], caretPosition);
 
                 } else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_MULTIPLY) {
                     try {
@@ -68,7 +67,6 @@ public class KeyMapper implements KeyListener {
                     } catch (BadLocationException e1) {
                         e1.printStackTrace();
                     }
-                    //textArea.insert(selectedSymbols[1][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_MULTIPLY) {
                     try {
@@ -76,7 +74,6 @@ public class KeyMapper implements KeyListener {
                     } catch (BadLocationException e1) {
                         e1.printStackTrace();
                     }
-                    //textArea.insert(selectedSymbols[1][1], caretPosition);
 
                 } else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_SUBTRACT) {
                     try {
@@ -84,7 +81,6 @@ public class KeyMapper implements KeyListener {
                     } catch (BadLocationException e1) {
                         e1.printStackTrace();
                     }
-                    //textArea.insert(selectedSymbols[2][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_SUBTRACT) {
                     try {
@@ -92,7 +88,6 @@ public class KeyMapper implements KeyListener {
                     } catch (BadLocationException e1) {
                         e1.printStackTrace();
                     }
-                    //textArea.insert(selectedSymbols[2][1], caretPosition);
 
                 } else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD7) {
                     try {
@@ -100,7 +95,6 @@ public class KeyMapper implements KeyListener {
                     } catch (BadLocationException e1) {
                         e1.printStackTrace();
                     }
-                    //textArea.insert(selectedSymbols[3][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD7) {
                     try {
@@ -108,7 +102,6 @@ public class KeyMapper implements KeyListener {
                     } catch (BadLocationException e1) {
                         e1.printStackTrace();
                     }
-                    //textArea.insert(selectedSymbols[3][1], caretPosition);
 
                 } else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD8) {
                     try {
@@ -116,7 +109,6 @@ public class KeyMapper implements KeyListener {
                     } catch (BadLocationException e1) {
                         e1.printStackTrace();
                     }
-                    //textArea.insert(selectedSymbols[4][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD8) {
                     try {
@@ -124,7 +116,6 @@ public class KeyMapper implements KeyListener {
                     } catch (BadLocationException e1) {
                         e1.printStackTrace();
                     }
-                    //textArea.insert(selectedSymbols[4][1], caretPosition);
 
                 } else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD9) {
                     try {
@@ -132,7 +123,6 @@ public class KeyMapper implements KeyListener {
                     } catch (BadLocationException e1) {
                         e1.printStackTrace();
                     }
-                    //textArea.insert(selectedSymbols[5][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD9) {
                     try {
@@ -140,7 +130,6 @@ public class KeyMapper implements KeyListener {
                     } catch (BadLocationException e1) {
                         e1.printStackTrace();
                     }
-                    //textArea.insert(selectedSymbols[5][1], caretPosition);
                     
                 }else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD4) {
                     try {
@@ -148,7 +137,6 @@ public class KeyMapper implements KeyListener {
                     } catch (BadLocationException e1) {
                         e1.printStackTrace();
                     }
-                    //textArea.insert(selectedSymbols[6][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD4) {
                     try {
@@ -156,7 +144,6 @@ public class KeyMapper implements KeyListener {
                     } catch (BadLocationException e1) {
                         e1.printStackTrace();
                     }
-                    //textArea.insert(selectedSymbols[6][1], caretPosition);
                     
                 } else if (!e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD5) {
                     try {
@@ -164,7 +151,6 @@ public class KeyMapper implements KeyListener {
                     } catch (BadLocationException e1) {
                         e1.printStackTrace();
                     }
-                    //textArea.insert(selectedSymbols[7][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD5) {
                     try {
@@ -172,7 +158,6 @@ public class KeyMapper implements KeyListener {
                     } catch (BadLocationException e1) {
                         e1.printStackTrace();
                     }
-                    //textArea.insert(selectedSymbols[7][1], caretPosition);
                     
                 } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_NUMPAD6) {
                     try {
@@ -180,7 +165,6 @@ public class KeyMapper implements KeyListener {
                     } catch (BadLocationException e1) {
                         e1.printStackTrace();
                     }
-                    //textArea.insert(selectedSymbols[8][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD6) {
                     try {
@@ -188,7 +172,6 @@ public class KeyMapper implements KeyListener {
                     } catch (BadLocationException e1) {
                         e1.printStackTrace();
                     }
-                    //textArea.insert(selectedSymbols[8][1], caretPosition);
                     
                 } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_NUMPAD1) {
                     try {
@@ -196,7 +179,6 @@ public class KeyMapper implements KeyListener {
                     } catch (BadLocationException e1) {
                         e1.printStackTrace();
                     }
-                    //textArea.insert(selectedSymbols[9][0], caretPosition);
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD1) {
                     try {
@@ -204,7 +186,6 @@ public class KeyMapper implements KeyListener {
                     } catch (BadLocationException e1) {
                         e1.printStackTrace();
                     }
-                    //textArea.insert(selectedSymbols[9][1], caretPosition);
                     
                 } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_NUMPAD2) {
                     try {
@@ -212,7 +193,7 @@ public class KeyMapper implements KeyListener {
                     } catch (BadLocationException e1) {
                         e1.printStackTrace();
                     }
-                    //textArea.insert(selectedSymbols[10][0], caretPosition);
+
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD2) {
                     try {
@@ -220,7 +201,7 @@ public class KeyMapper implements KeyListener {
                     } catch (BadLocationException e1) {
                         e1.printStackTrace();
                     }
-                    //textArea.insert(selectedSymbols[10][1], caretPosition);
+
                     
                 } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_NUMPAD3) {
                     try {
@@ -228,7 +209,7 @@ public class KeyMapper implements KeyListener {
                     } catch (BadLocationException e1) {
                         e1.printStackTrace();
                     }
-                    //textArea.insert(selectedSymbols[11][0], caretPosition);
+
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD3) {
                     try {
@@ -236,7 +217,7 @@ public class KeyMapper implements KeyListener {
                     } catch (BadLocationException e1) {
                         e1.printStackTrace();
                     }
-                    //textArea.insert(selectedSymbols[11][1], caretPosition);
+
                     
                 } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_NUMPAD0) {
                     try {
@@ -244,7 +225,7 @@ public class KeyMapper implements KeyListener {
                     } catch (BadLocationException e1) {
                         e1.printStackTrace();
                     }
-                    //textArea.insert(selectedSymbols[12][0], caretPosition);
+
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_NUMPAD0) {
                     try {
@@ -252,7 +233,7 @@ public class KeyMapper implements KeyListener {
                     } catch (BadLocationException e1) {
                         e1.printStackTrace();
                     }
-                    //textArea.insert(selectedSymbols[12][1], caretPosition);
+
                     
                 } else if (!e.isControlDown() &&e.getKeyCode() == KeyEvent.VK_DECIMAL) {
                     try {
@@ -260,7 +241,7 @@ public class KeyMapper implements KeyListener {
                     } catch (BadLocationException e1) {
                         e1.printStackTrace();
                     }
-                    //textArea.insert(selectedSymbols[13][0], caretPosition);
+
 
                 } else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_DECIMAL) {
                     try {
@@ -268,7 +249,7 @@ public class KeyMapper implements KeyListener {
                     } catch (BadLocationException e1) {
                         e1.printStackTrace();
                     }
-                    //textArea.insert(selectedSymbols[13][1], caretPosition);
+
                     
                 }
     }
