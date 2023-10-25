@@ -19,7 +19,7 @@ public class NumPad extends JPanel {
     private String[][] buttons = {
             {"\u222B", "\u2211"},  // integral and sigma sum
             {"\u2205", "\u2218"},  // null set and compose function
-            {"\u221E", ""},  // infinity
+            {"\u221E", "\u05D0"},  // infinity and aleph
             {"\u2227", "\u2228"},  // logical AND and OR
             {"\u00AC", "\u2234"},  // logical NOT and THEREFORE 
             {"\u2192", "\u2194"},  // implication and biconditional arrows
